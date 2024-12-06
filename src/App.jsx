@@ -7,7 +7,10 @@ import {
   Stars,
   Waves,
   Moon,
-  Sun
+  Sun,
+  Heart,
+  X,
+  Activity
 } from 'lucide-react';
 import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
@@ -109,26 +112,16 @@ function App() {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-muted-foreground mb-4">
-                  I came across MS Excel as a workplace tool to maintain accounts and do tax computations back in 2009. 
-                  Finding out you can have nested IF formulas was an excitement I couldn't very well describe in words. 
-                  This began a journey of figuring out what more can be done and pushing excel to (my known) limits.
+                  Since discovering Excel's nested IF formulas in 2009, I've developed expertise in building advanced 
+                  spreadsheet solutions for business analytics and semi automatic workflows. My journey was enriched during 
+                  my MBA at Sri Sri University under the mentorship of Ramnik Bansal, leading to deeper exploration of 
+                  Excel's capabilities.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  It was a slow journey, till I met Ramnik Bansal during my MBA at Sri Sri University, who took "Excel magic" 
-                  lessons for us MBA students. That was a crazy ride of learning, burning the midnight oil all the way to 
-                  morning to get those assignments done but it was exactly this base that set the stage for my future learnings.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  From then on its been full steam ahead on discovering hacks, developing templates, making complex formulas 
-                  without VBA to partially or fully automate tasks. I have enjoyed sharing the joys of Excel through small 
-                  camps at my workplace and at my MBA school (SSU).
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  My mission is a simple one: I want people to go from surviving Excel to thriving with Excel.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  Due to work commitments I am no longer conducting Excel camps but if you have an Excel problem that needs 
-                  solving or require assistance in building a template or dashboard, you can book a consulting with me below:
+                  While I've previously conducted group workshops and individual training sessions, I now focus 
+                  on personalized consultations to help professionals transform their Excel workflow. 
+                  Whether it's complex formulas, automated templates, or custom dashboards, I'm here to help you 
+                  leverage Excel's full potential.
                 </p>
               </CardContent>
               <CardFooter className="flex justify-center">
@@ -155,24 +148,14 @@ function App() {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-muted-foreground mb-4">
-                  Jyoti means light and Jyotish is the light that guides. It is considered the first Vedanga (limb of Vedas) 
-                  and the first principle for understanding the Vedas and life.
+                  Jyotish, meaning 'science of light', is the foremost Vedanga that illuminates our understanding of life's journey. 
+                  My fascination with this ancient wisdom led me to study under world-renowned astrologer Shri Alok Khandelwal at 
+                  Asttrolok institute.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  Since childhood I had a fascination towards this ancient teaching that helps people navigate the highs and 
-                  lows of living and unravel the mysteries of their life. After many failed attempts at trying to learn this 
-                  science, I finally had the honour and privilege of learning Vaidic astrology from Shri Alok Khandelwal, 
-                  world renowned astrologer and founder of Asttrolok institute.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  Under the guidance of Alok ji and his team of expert mentors, I have successfully completed the flagship 
-                  program of Asttrolok, Astromani, and now a practising astrologer. While astrology is a subject for which 
-                  I will be a life long student, with many things yet to learn, it is a great privilege to be able to help 
-                  others in finding relief and meaning.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  If you want to know more about Jyotish or Asttrolok, you can use the links. If you want a consultation, 
-                  you can use the appointment form below and share a few details.
+                  As an Astromani graduate and practicing astrologer, I combine traditional Vedic knowledge with contemporary insight 
+                  to help individuals find clarity and direction. While I remain a lifelong student of this vast science, I'm privileged 
+                  to offer guidance through personal consultations.
                 </p>
               </CardContent>
               <CardFooter className="justify-center">
@@ -200,21 +183,15 @@ function App() {
               <CardContent className="text-center">
                 <p className="text-muted-foreground mb-4">
                   In August 2022 I had the pleasure of learning Medical Varmalogy or Marma Chikitsa from 
-                  Thirumoolar Varmalogy Institute (Link).
+                  Thirumoolar Varmalogy Institute.
                 </p>
                 <p className="text-muted-foreground mb-4">
                   Varmalogy is a systematic study of vital points (varmams) on human body and also on animal bodies. 
                   The vital points (varmams) are located on nerves, nerve joints, bones, muscles, ligaments and internal 
                   organs. Right or wrong vibration of the vital points (varmams) will either promote or impair health. 
-                  Varmams are rhythmically tuned by varma experts for curing various diseases like nerve disorders, 
-                  arthritis, back pain, diabetes, spinal problems and etc.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  Varmalogy is connected with various disciplines like Siddha medicine, Yoga, Therapeutic Massage, 
-                  Astrology, Psychology, Sociology, Martial Arts and so on.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  This is ancient practice which gives surprisingly good results in just couple of session lasting not 
+                  This is an ancient practice which gives surprisingly good results in just couple of session lasting not 
                   more than 10-15 mins. In my personal experience, it has been strongly effective in dealing with pains, 
                   aches and regulating body heat.
                 </p>
@@ -290,15 +267,39 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 dark:bg-black text-white py-8">
-        <Container>
-          <div className="text-center">
-            <p className="text-gray-200">© {new Date().getFullYear()} Mihir Chavan. All rights reserved.</p>
+      <footer className="bg-gray-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Connect With Me</h3>
+              <div className="flex space-x-4">
+                <a href="https://www.instagram.com/hokagemihir/" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-6 w-6" />
+                </a>
+                <a href="https://www.linkedin.com/in/mihir-chavan-48710717/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-6 w-6" />
+                </a>
+              </div>
+            </div>
+            <div>
+              <p>Support a cause:</p>
+              <a 
+                href="https://vvki-dsy.org/donate" 
+                className="flex items-center text-blue-400 hover:text-blue-300"
+              >
+                <Heart className="h-4 w-4 mr-2" />
+                Dharma Sthambha Yojna
+              </a>
+            </div>
+            <div className="text-right">
+              <p>© {new Date().getFullYear()} Mihir Chavan. All rights reserved.</p>
+            </div>
           </div>
-        </Container>
+        </div>
       </footer>
     </div>
   );
-}
+};
+
 
 export default App;
