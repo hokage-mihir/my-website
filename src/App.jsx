@@ -141,9 +141,9 @@ function App() {
           <div className="mb-8">
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 justify-center">
+                <CardTitle className="flex items-center gap-2 justify-center flex-wrap">
                   <Stars className="w-5 h-5" />
-                  Jyotish (Vaidic astrology)
+              <span className="whitespace-normal text-center">Jyotish (Vaidic astrology)</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
@@ -266,40 +266,55 @@ function App() {
         </Container>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="flex justify-between items-center">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Connect With Me</h3>
-              <div className="flex space-x-4">
-                <a href="https://www.instagram.com/hokagemihir/" target="_blank" rel="noopener noreferrer">
+       {/* Footer */}
+       <footer className="bg-gray-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 py-8 md:py-12">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-6 md:space-y-0">
+            {/* Connect Section */}
+            <div className="text-center md:text-left">
+              <h3 className="text-lg md:text-xl font-semibold mb-3">Connect With Me</h3>
+              <div className="flex justify-center md:justify-start space-x-4">
+                <a 
+                  href="https://www.instagram.com/hokagemihir/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-400 transition-colors"
+                >
                   <Instagram className="h-6 w-6" />
                 </a>
-                <a href="https://www.linkedin.com/in/mihir-chavan-48710717/" target="_blank" rel="noopener noreferrer">
+                <a 
+                  href="https://www.linkedin.com/in/mihir-chavan-48710717/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-400 transition-colors"
+                >
                   <Linkedin className="h-6 w-6" />
                 </a>
               </div>
             </div>
-            <div>
-              <p>Support a cause:</p>
+
+            {/* Support Section */}
+            <div className="text-center md:text-left">
+              <p className="mb-2">Support a cause:</p>
               <a 
                 href="https://vvki-dsy.org/donate" 
-                className="flex items-center text-blue-400 hover:text-blue-300"
+                className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
               >
                 <Heart className="h-4 w-4 mr-2" />
                 Dharma Sthambha Yojna
               </a>
             </div>
-            <div className="text-right">
-              <p>© {new Date().getFullYear()} Mihir Chavan. All rights reserved.</p>
+
+            {/* Copyright Section */}
+            <div className="text-center md:text-right text-sm md:text-base">
+              <p>© {new Date().getFullYear()} Mihir Chavan.</p>
+              <p>All rights reserved.</p>
             </div>
           </div>
         </div>
       </footer>
     </div>
   );
-};
-
+}
 
 export default App;
