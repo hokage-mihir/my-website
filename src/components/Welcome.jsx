@@ -24,7 +24,7 @@ const Welcome = () => {
                 Check out my latest creation:
               </p>
               <a 
-                href="https://vedic-astrology-dashboard.pages.dev/"
+                href="https://moonmood.xyz/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 rounded-md bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white transition-colors duration-200"
