@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container";
 
 const PassionProjects = () => {
   return (
-    <section className="py-10">
+    <section className="py-10" id="passionProjects">
       <Container>
         <h2 className="text-3xl font-bold my-8 text-center">Explore My Passion Projects</h2>
         

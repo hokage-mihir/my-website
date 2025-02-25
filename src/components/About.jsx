@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 
 const About = () => {
   return (
-    <section className="py-10 bg-background">
+    <section className="py-10 bg-background" id="about">
       <Container>
         <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
         <Card>

@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 
 const Welcome = () => {
   return (
-    <section className="py-10">
+    <section className="py-10" id="welcome">
       <Container>
         <Card>
           <CardHeader>

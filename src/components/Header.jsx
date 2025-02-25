@@ -10,9 +10,12 @@ const Header = ({ toggleDarkMode }) => {
       <div className="absolute inset-0">
         <img 
           src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=2000&q=80" 
-          alt="Ama Dablam mountain peak" 
+          alt="Mihir Chavan personal website header - mountain landscape" 
           className="w-full h-full object-cover object-center opacity-95"
-        />
+          loading="eager"
+          width="2000"
+          height="1200"
+          />
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-800/40 to-teal-700/40 backdrop-blur-[0.5px]" />
       </div>
       <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-20 text-center">
@@ -21,7 +24,7 @@ const Header = ({ toggleDarkMode }) => {
         </h1>
         <div className="flex items-center justify-center gap-4">
           <Button variant="ghost" size="icon" asChild className="hover:text-teal-300 transition-colors">
-            <a href="https://www.linkedin.com/in/mihir-chavan-48710717/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/hokage-mihir/" target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-7 h-7 drop-shadow-md" />
             </a>
           </Button>
