@@ -3,12 +3,14 @@ import React from 'react';
 import { Linkedin, Instagram, Sun, Moon } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Toggle } from "@/components/ui/toggle";
+import OptimizedImage from "@/components/ui/optimized-image";
+
 
 const Header = ({ toggleDarkMode }) => {
   return (
     <header className="relative h-[300px] md:h-[350px] lg:h-[400px] bg-gradient-to-r from-emerald-800/80 to-teal-700/80 text-white overflow-hidden">
       <div className="absolute inset-0">
-        <img 
+        <OptimizedImage 
           src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=2000&q=80" 
           alt="Mihir Chavan personal website header - mountain landscape" 
           className="w-full h-full object-cover object-center opacity-95"
