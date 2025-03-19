@@ -31,7 +31,7 @@ const Header = ({ toggleDarkMode }) => {
             </a>
           </Button>
           <Button variant="ghost" size="icon" asChild className="hover:text-teal-300 transition-colors">
-            <a href="https://www.instagram.com/hokagemihir" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/hokage.mihir" target="_blank" rel="noopener noreferrer">
               <Instagram className="w-7 h-7 drop-shadow-md" />
             </a>
           </Button>

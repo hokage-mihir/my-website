@@ -1,6 +1,6 @@
 // src/components/PassionProjects.jsx
 import React from 'react';
-import { FileSpreadsheet, Stars, Waves, Calendar } from 'lucide-react';
+import { FileSpreadsheet, Stars, Waves, Calendar, ExternalLink } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
@@ -10,6 +10,40 @@ const PassionProjects = () => {
     <section className="py-10" id="passionProjects">
       <Container>
         <h2 className="text-3xl font-bold my-8 text-center">Explore My Passion Projects</h2>
+        
+        {/* Jyotish Section (Moved to top) */}
+        <div className="mb-8">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 justify-center flex-wrap">
+                <Stars className="w-5 h-5" />
+                <span className="whitespace-normal text-center">Jyotish (Vaidic astrology)</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <p className="text-muted-foreground mb-4">
+                Jyotish, meaning 'science of light', is the foremost Vedanga that illuminates our understanding of life's journey. 
+                My fascination with this ancient wisdom led me to study under world-renowned astrologer Shri Alok Khandelwal at 
+                Asttrolok institute.
+              </p>
+              <p className="text-muted-foreground mb-4">
+                As an Astromani graduate and practicing astrologer, I combine traditional Vedic knowledge with contemporary insight 
+                to help individuals find clarity and direction. While I remain a lifelong student of this vast science, I'm privileged 
+                to offer guidance through personal consultations.
+              </p>
+            </CardContent>
+            <CardFooter className="justify-center">
+              <Button 
+                className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600"
+                data-cal-link="hokagemihir/jyotish"
+                data-cal-config='{"layout":"month_view"}'
+              >
+                <Calendar className="w-4 h-4 mr-2" />
+                Book Consultation
+              </Button>
+            </CardFooter>
+          </Card>
+        </div>
         
         {/* Excel Section */}
         <div className="mb-8">
@@ -37,45 +71,10 @@ const PassionProjects = () => {
             <CardFooter className="flex justify-center">
               <Button 
                 className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600"
-                data-cal-link="hokagemihir/excel-consult"
-                data-cal-config='{"layout":"month_view"}'
+                onClick={() => window.open('https://tally.so/r/mOk2xK', '_blank')}
               >
-                <Calendar className="w-4 h-4 mr-2" />
-                Book Consultation
-              </Button>
-            </CardFooter>
-          </Card>
-        </div>
-
-        {/* Jyotish Section */}
-        <div className="mb-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 justify-center flex-wrap">
-                <Stars className="w-5 h-5" />
-                <span className="whitespace-normal text-center">Jyotish (Vaidic astrology)</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-muted-foreground mb-4">
-                Jyotish, meaning 'science of light', is the foremost Vedanga that illuminates our understanding of life's journey. 
-                My fascination with this ancient wisdom led me to study under world-renowned astrologer Shri Alok Khandelwal at 
-                Asttrolok institute.
-              </p>
-              <p className="text-muted-foreground mb-4">
-                As an Astromani graduate and practicing astrologer, I combine traditional Vedic knowledge with contemporary insight 
-                to help individuals find clarity and direction. While I remain a lifelong student of this vast science, I'm privileged 
-                to offer guidance through personal consultations.
-              </p>
-            </CardContent>
-            <CardFooter className="justify-center">
-              <Button 
-                className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600"
-                data-cal-link="hokagemihir/30"
-                data-cal-config='{"layout":"month_view"}'
-              >
-                <Calendar className="w-4 h-4 mr-2" />
-                Book Consultation
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Request Consultation
               </Button>
             </CardFooter>
           </Card>
@@ -109,11 +108,10 @@ const PassionProjects = () => {
             <CardFooter className="flex justify-center">
               <Button 
                 className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600"
-                data-cal-link="hokagemihir/marma-appointment"
-                data-cal-config='{"layout":"month_view"}'
+                onClick={() => window.open('https://tally.so/r/mOk2xK', '_blank')}
               >
-                <Calendar className="w-4 h-4 mr-2" />
-                Book Consultation
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Request Consultation
               </Button>
             </CardFooter>
           </Card>
