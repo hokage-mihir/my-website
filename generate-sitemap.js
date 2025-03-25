@@ -1,20 +1,20 @@
-// scripts/generate-sitemap.js
+// generate-sitemap.js
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Get the directory name using ES module syntax
+// Get current file's directory with ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Define your website URL
 const BASE_URL = 'https://mihirchavan.in';
 
-// Define your routes - update this with all your static routes
+// Define your routes
 const routes = [
   {
     path: '/',
-    lastmod: new Date().toISOString().split('T')[0], // Today's date in YYYY-MM-DD format
+    lastmod: new Date().toISOString().split('T')[0],
     priority: '1.0',
     changefreq: 'weekly'
   },
@@ -30,11 +30,10 @@ const routes = [
     priority: '0.8',
     changefreq: 'monthly'
   }
-  // Add any additional routes/pages here
 ];
 
 // Create the XML sitemap content
-const generateSitemapXML = () => {
+function generateSitemapXML() {
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
   
@@ -49,20 +48,28 @@ const generateSitemapXML = () => {
   
   xml += '</urlset>';
   return xml;
-};
+}
 
-// Write the sitemap to a file
-const writeSitemap = () => {
-  const sitemap = generateSitemapXML();
-  const publicDir = path.resolve(__dirname, '..', 'public');
-  
-  // Ensure the public directory exists
-  if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir, { recursive: true });
+// Get the dist directory path
+const distDir = path.resolve(__dirname, 'dist');
+
+// Write the sitemap directly to the build directory
+try {
+  if (fs.existsSync(distDir)) {
+    fs.writeFileSync(path.join(distDir, 'sitemap.xml'), generateSitemapXML());
+    console.log('Sitemap generated successfully in dist/sitemap.xml');
+    
+    // Also copy robots.txt to dist if it exists in public folder
+    const publicRobotsPath = path.resolve(__dirname, 'public', 'robots.txt');
+    const distRobotsPath = path.resolve(distDir, 'robots.txt');
+    
+    if (fs.existsSync(publicRobotsPath) && !fs.existsSync(distRobotsPath)) {
+      fs.copyFileSync(publicRobotsPath, distRobotsPath);
+      console.log('robots.txt copied to dist directory');
+    }
+  } else {
+    console.error('Error: dist directory does not exist');
   }
-  
-  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap);
-  console.log('Sitemap generated successfully!');
-};
-
-writeSitemap();
+} catch (err) {
+  console.error('Error generating sitemap:', err);
+}
