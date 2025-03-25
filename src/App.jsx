@@ -1,14 +1,13 @@
 // src/App.jsx
 import React, { useEffect } from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { getCalApi } from "@calcom/embed-react";
 
-// Component Imports
-import Header from './components/Header';
-import Welcome from './components/Welcome';
-import PassionProjects from './components/PassionProjects';
-import About from './components/About';
-import Career from './components/Career';
-import Footer from './components/Footer';
+// Layout and Pages
+import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import PassionProjectsPage from './pages/PassionProjectsPage';
 
 function App() {
   // Initialize Cal.com
@@ -25,17 +24,6 @@ function App() {
     })();
   }, []);
 
-  // Dark mode toggle function
-  const toggleDarkMode = () => {
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      localStorage.theme = 'light';
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.theme = 'dark';
-    }
-  };
-
   // Initialize dark mode based on system preference or localStorage
   useEffect(() => {
     // Check if dark mode preference exists in localStorage
@@ -51,16 +39,15 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header toggleDarkMode={toggleDarkMode} />
-      <main>
-        <Welcome />
-        <PassionProjects />
-        <About />
-        <Career />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="projects" element={<PassionProjectsPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

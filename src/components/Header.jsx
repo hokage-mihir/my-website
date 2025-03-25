@@ -1,12 +1,10 @@
 // src/components/Header.jsx
 import React from 'react';
-import { Linkedin, Instagram, Sun, Moon } from 'lucide-react';
+import { Linkedin, Instagram } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Toggle } from "@/components/ui/toggle";
 import OptimizedImage from "@/components/ui/optimized-image";
 
-
-const Header = ({ toggleDarkMode }) => {
+const Header = () => {
   return (
     <header className="relative h-[300px] md:h-[350px] lg:h-[400px] bg-gradient-to-r from-emerald-800/80 to-teal-700/80 text-white overflow-hidden">
       <div className="absolute inset-0">
@@ -17,7 +15,7 @@ const Header = ({ toggleDarkMode }) => {
           loading="eager"
           width="2000"
           height="1200"
-          />
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-800/40 to-teal-700/40 backdrop-blur-[0.5px]" />
       </div>
       <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-20 text-center">
@@ -35,10 +33,6 @@ const Header = ({ toggleDarkMode }) => {
               <Instagram className="w-7 h-7 drop-shadow-md" />
             </a>
           </Button>
-          <Toggle pressed={document.documentElement.classList.contains('dark')} onPressedChange={toggleDarkMode}>
-            <Sun className="w-7 h-7 hidden dark:block drop-shadow-md" />
-            <Moon className="w-7 h-7 dark:hidden drop-shadow-md" />
-          </Toggle>
         </div>
       </div>
     </header>

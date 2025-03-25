@@ -1,52 +1,95 @@
 // src/components/Footer.jsx
 import React from 'react';
-import { Instagram, Linkedin, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Instagram, Linkedin, Heart, Home, User, Lightbulb, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="max-w-6xl mx-auto px-4 py-8 md:py-12">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-6 md:space-y-0">
+      <div className="max-w-6xl mx-auto px-4 py-10 md:py-14">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* Site Navigation */}
+          <div>
+            <h3 className="text-lg md:text-xl font-semibold mb-4">Navigation</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                  <Home className="h-4 w-4 mr-2" />
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                  <User className="h-4 w-4 mr-2" />
+                  About Me
+                </Link>
+              </li>
+              <li>
+                <Link to="/projects" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                  <Lightbulb className="h-4 w-4 mr-2" />
+                  Passion Projects
+                </Link>
+              </li>
+              <li>
+                <a href="#contact" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                  <Mail className="h-4 w-4 mr-2" />
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          
           {/* Connect Section */}
-          <div className="text-center md:text-left">
-            <h3 className="text-lg md:text-xl font-semibold mb-3">Connect With Me</h3>
-            <div className="flex justify-center md:justify-start space-x-4">
+          <div>
+            <h3 className="text-lg md:text-xl font-semibold mb-4">Connect With Me</h3>
+            <div className="flex space-x-4 mb-4">
               <a 
                 href="https://www.instagram.com/hokagemihir/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors"
+                className="bg-gray-800 p-2 rounded-full hover:bg-indigo-600 transition-colors"
               >
-                <Instagram className="h-6 w-6" />
+                <Instagram className="h-5 w-5" />
               </a>
               <a 
-                href="https://www.linkedin.com/in/mihir-chavan-48710717/" 
+                href="https://www.linkedin.com/in/hokage-mihir/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors"
+                className="bg-gray-800 p-2 rounded-full hover:bg-indigo-600 transition-colors"
               >
-                <Linkedin className="h-6 w-6" />
+                <Linkedin className="h-5 w-5" />
               </a>
             </div>
+            <p className="text-sm text-gray-400">
+              Follow my social accounts for updates on latest projects and insights.
+            </p>
           </div>
-
+          
           {/* Support Section */}
-          <div className="text-center md:text-left">
-            <p className="mb-2">Support a cause:</p>
+          <div>
+            <h3 className="text-lg md:text-xl font-semibold mb-4">Support a Cause</h3>
             <a 
               href="https://vvki-dsy.org/donate" 
-              className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+              className="inline-flex items-center text-gray-300 hover:text-blue-300 transition-colors"
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              <Heart className="h-4 w-4 mr-2" />
+              <Heart className="h-4 w-4 mr-2 text-red-400" />
               Dharma Sthambha Yojna
             </a>
-            <div id="bmc-wrapper" className="inline-flex justify-center md:justify-start" />
+            <p className="mt-2 text-sm text-gray-400">
+              Support initiatives that transform lives through spiritual wisdom and meditation.
+            </p>
           </div>
-
+          
           {/* Copyright Section */}
-          <div className="text-center md:text-right text-sm md:text-base">
-            <p>© {new Date().getFullYear()} Mihir Chavan.</p>
-            <p>All rights reserved.</p>
+          <div>
+            <h3 className="text-lg md:text-xl font-semibold mb-4">Legal</h3>
+            <p className="text-sm text-gray-400 mb-1">© {new Date().getFullYear()} Mihir Chavan.</p>
+            <p className="text-sm text-gray-400">All rights reserved.</p>
+            <div className="mt-4 text-xs text-gray-500">
+              <p>This website was created with React, Tailwind CSS, and ShadCN UI components.</p>
+            </div>
           </div>
         </div>
       </div>
