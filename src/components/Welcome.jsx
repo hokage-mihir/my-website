@@ -9,12 +9,12 @@ import { Spotlight } from '@/components/ui/spotlight';
 
 const Welcome = () => {
   return (
-    <section className="py-12 relative overflow-hidden" id="welcome">
+    <section className="py-12 relative overflow-hidden bg-background" id="welcome">
       <Container>
         <Spotlight className="rounded-3xl">
-          <Card className="border-0 shadow-xl">
+          <Card className="border-0 shadow-xl bg-card">
             <CardHeader>
-              <CardTitle className="text-center text-3xl md:text-4xl">
+              <CardTitle className="text-center text-3xl md:text-4xl text-foreground">
                 Hello There! I'm <GradientText>Mihir Chavan</GradientText>
               </CardTitle>
             </CardHeader>
@@ -28,7 +28,7 @@ const Welcome = () => {
                 services I offer.
               </p>
               <div className="mt-10 space-y-2">
-                <p className="text-slate-600 dark:text-slate-400">
+                <p className="text-muted-foreground">
                   Check out my latest creation:
                 </p>
                 <AnimatedGradientBorder className="inline-block">
