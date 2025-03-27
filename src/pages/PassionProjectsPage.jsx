@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container";
 // Aceternity-inspired feature card
 const FeatureCard = ({ icon: Icon, title, description, actionButton }) => {
   return (
-    <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-8 shadow-sm transition-all duration-500 hover:shadow-xl">
+    <div className="group relative overflow-hidden rounded-xl bg-white border border-slate-200 p-8 shadow-sm transition-all duration-500 hover:shadow-xl">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-purple-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
@@ -16,9 +16,9 @@ const FeatureCard = ({ icon: Icon, title, description, actionButton }) => {
         <Icon className="h-5 w-5" />
       </div>
       
-      <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">{title}</h3>
+      <h3 className="mb-4 text-xl font-semibold text-slate-900">{title}</h3>
       
-      <div className="mb-8 text-slate-700 dark:text-slate-300 text-left">
+      <div className="mb-8 text-slate-700 text-left">
         {description}
       </div>
       {actionButton && (
@@ -52,7 +52,7 @@ const PassionProjectsPage = () => {
       <Container>
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">My Passion Projects</h1>
-          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Beyond my professional career, I'm deeply invested in several areas that allow me to explore 
             my creativity, knowledge, and desire to help others.
           </p>
@@ -79,7 +79,7 @@ const PassionProjectsPage = () => {
             }
             actionButton={
               <Button 
-                className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 w-full"
+                className="bg-indigo-600 hover:bg-indigo-700 w-full"
                 data-cal-link="hokagemihir/jyotish"
                 data-cal-config='{"layout":"month_view"}'
                 onClick={handleJyotishClick}
@@ -112,7 +112,7 @@ const PassionProjectsPage = () => {
             }
             actionButton={
               <Button 
-                className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 w-full"
+                className="bg-indigo-600 hover:bg-indigo-700 w-full"
                 onClick={handleExcelClick}
               >
                 <ExternalLink className="w-4 h-4 mr-2" />
@@ -147,7 +147,7 @@ const PassionProjectsPage = () => {
             }
             actionButton={
               <Button 
-                className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 w-full"
+                className="bg-indigo-600 hover:bg-indigo-700 w-full"
                 onClick={handleMarmaClick}
               >
                 <ExternalLink className="w-4 h-4 mr-2" />
@@ -180,7 +180,7 @@ const PassionProjectsPage = () => {
             }
             actionButton={
               <Button 
-                className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 w-full"
+                className="bg-indigo-600 hover:bg-indigo-700 w-full"
                 onClick={handleWebsiteClick}
               >
                 <Code className="w-4 h-4 mr-2" />

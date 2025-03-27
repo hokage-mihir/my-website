@@ -13,11 +13,11 @@ import ContactSection from '../components/ContactSection';
 // Aceternity-inspired animated card component
 const AnimatedCard = ({ title, children, footer }) => {
   return (
-    <div className="group relative rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-6 shadow-sm transition-all hover:shadow-md">
+    <div className="group relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md">
       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-300 to-teal-300 opacity-0 blur-xl transition-opacity group-hover:opacity-70" />
       <div className="relative flex h-full flex-col">
         <div className="mb-6">
-          <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{title}</h3>
+          <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
         </div>
         <div className="flex-grow">{children}</div>
         {footer && <div className="pt-6">{footer}</div>}
@@ -30,17 +30,17 @@ const AnimatedCard = ({ title, children, footer }) => {
 const NavCard = ({ to, icon: Icon, title, description }) => {
   return (
     <Link to={to} className="block">
-      <Card className="h-full transition-all duration-300 hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-800">
+      <Card className="h-full transition-all duration-300 hover:shadow-md hover:border-indigo-200">
         <CardContent className="p-6 flex items-center gap-4">
-          <div className="bg-indigo-100 dark:bg-indigo-900/40 p-3 rounded-full">
-            <Icon className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+          <div className="bg-indigo-100 p-3 rounded-full">
+            <Icon className="h-6 w-6 text-indigo-600" />
           </div>
           <div>
             <h3 className="font-medium text-lg flex items-center">
               {title}
               <ChevronRight className="h-4 w-4 ml-1 text-indigo-500" />
             </h3>
-            <p className="text-muted-foreground text-sm">{description}</p>
+            <p className="text-gray-600 text-sm">{description}</p>
           </div>
         </CardContent>
       </Card>
@@ -54,7 +54,7 @@ const HomePage = () => {
       <Welcome />
       
       {/* Page Navigation Section */}
-      <section className="py-12 bg-white dark:bg-slate-950">
+      <section className="py-12 bg-white">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <NavCard 
@@ -73,7 +73,7 @@ const HomePage = () => {
         </Container>
       </section>
       
-      <section className="py-12 bg-slate-50 dark:bg-slate-900">
+      <section className="py-12 bg-slate-50">
         <Container>
           <h2 className="text-3xl font-bold mb-12 text-center">Services & Programs</h2>
           
@@ -83,7 +83,7 @@ const HomePage = () => {
               title="Jyotish Consultation"
               footer={
                 <Button 
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600"
+                  className="w-full bg-indigo-600 hover:bg-indigo-700"
                   data-cal-link="hokagemihir/jyotish"
                   data-cal-config='{"layout":"month_view"}'
                 >
@@ -92,7 +92,7 @@ const HomePage = () => {
                 </Button>
               }
             >
-              <p className="text-slate-600 dark:text-slate-300 mb-4">
+              <p className="text-slate-600 mb-4">
                 Jyotish, meaning 'science of light', is the foremost Vedanga that illuminates our understanding of life's journey.
                 As an Astromani graduate and practicing astrologer, I combine traditional Vedic knowledge with contemporary insight
                 to help individuals find clarity and direction.
@@ -104,7 +104,7 @@ const HomePage = () => {
               title="Upcoming Art of Living Programs"
               footer={
                 <Button 
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600"
+                  className="w-full bg-indigo-600 hover:bg-indigo-700"
                   onClick={() => window.open('https://tally.so/r/w2oP4D', '_blank')}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
@@ -112,11 +112,11 @@ const HomePage = () => {
                 </Button>
               }
             >
-              <p className="text-slate-600 dark:text-slate-300 mb-2">
+              <p className="text-slate-600 mb-2">
                 The Art of Living offers programs that help individuals eliminate stress, experience deeper meditations, 
                 and realize their full potential of mind, body and spirit.
               </p>
-              <ul className="list-disc pl-5 text-slate-600 dark:text-slate-300 space-y-1">
+              <ul className="list-disc pl-5 text-slate-600 space-y-1">
                 <li>Happiness Program: Coming Soon</li>
                 <li>Online Meditation & Breath Workshop: Coming Soon</li>
               </ul>

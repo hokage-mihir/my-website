@@ -38,7 +38,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-16 bg-slate-50 dark:bg-slate-900" id="contact">
+    <section className="py-16 bg-slate-50" id="contact">
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
@@ -49,7 +49,7 @@ const ContactSection = () => {
         </div>
         
         <div className="max-w-3xl mx-auto">
-          <div className="bg-white dark:bg-slate-800 shadow-md rounded-xl overflow-hidden">
+          <div className="bg-white shadow-md rounded-xl overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Contact Information */}
               <div className="bg-gradient-to-br from-indigo-500 to-teal-500 p-8 text-white">

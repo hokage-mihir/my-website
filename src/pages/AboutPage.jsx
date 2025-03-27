@@ -6,21 +6,21 @@ import { Container } from "@/components/ui/container";
 // Aceternity-inspired components
 const ProfileSection = () => {
   return (
-    <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-teal-50 to-indigo-50 dark:from-indigo-950/30 dark:to-teal-950/30 p-8 md:p-10 shadow-sm">
-      <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-indigo-200 dark:bg-indigo-900/30 blur-3xl" />
-      <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-teal-200 dark:bg-teal-900/30 blur-3xl" />
+    <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-teal-50 to-indigo-50 p-8 md:p-10 shadow-sm">
+      <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-indigo-200 blur-3xl" />
+      <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-teal-200 blur-3xl" />
       
       <div className="relative flex flex-col md:flex-row gap-8 items-center">
-        <div className="relative w-48 h-48 overflow-hidden rounded-full border-4 border-white dark:border-slate-800 shadow-lg">
+        <div className="relative w-48 h-48 overflow-hidden rounded-full border-4 border-white shadow-lg">
           {/* Placeholder for profile photo */}
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-200 to-teal-200 dark:from-indigo-900 dark:to-teal-900 flex items-center justify-center">
-            <span className="text-6xl text-indigo-600 dark:text-indigo-300 font-semibold">M</span>
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-200 to-teal-200 flex items-center justify-center">
+            <span className="text-6xl text-indigo-600 font-semibold">M</span>
           </div>
         </div>
         
         <div className="text-center md:text-left">
           <h2 className="text-3xl font-bold mb-4">About Me</h2>
-          <p className="text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">
+          <p className="text-slate-700 max-w-2xl leading-relaxed">
             Your typical city bred, corporate employee with a varied experience in the finance field. With a bachelors 
             in commerce and MBA in Finance, I have been pursuing a work journey that aligns with my expertise. Aside 
             from work, I am also a certified marma practitioner and an astrologer in training. I have a certain love 
@@ -62,14 +62,14 @@ const CareerTimeline = () => {
       
       <div className="relative">
         {/* Timeline track */}
-        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 -ml-px md:mx-auto bg-indigo-200 dark:bg-indigo-800" />
+        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 -ml-px md:mx-auto bg-indigo-200" />
         
         <div className="space-y-12">
           {careers.map((career, index) => (
             <div key={index} className="relative">
               <div className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 -ml-2 md:-ml-2.5 h-5 w-5 rounded-full border-4 border-indigo-500 bg-white dark:bg-slate-900" />
+                <div className="absolute left-0 md:left-1/2 -ml-2 md:-ml-2.5 h-5 w-5 rounded-full border-4 border-indigo-500 bg-white" />
                 
                 {/* Content */}
                 <div className="pl-8 md:pl-0 md:w-1/2 md:px-8">

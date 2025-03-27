@@ -24,20 +24,6 @@ function App() {
     })();
   }, []);
 
-  // Initialize dark mode based on system preference or localStorage
-  useEffect(() => {
-    // Check if dark mode preference exists in localStorage
-    const darkModePreference = localStorage.theme === 'dark' || 
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-    // Set initial dark mode state
-    if (darkModePreference) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, []);
-
   return (
     <BrowserRouter>
       <Routes>

@@ -12,23 +12,23 @@ const Welcome = () => {
     <section className="py-12 relative overflow-hidden bg-background" id="welcome">
       <Container>
         <Spotlight className="rounded-3xl">
-          <Card className="border-0 shadow-xl bg-card">
+          <Card className="border-0 shadow-xl bg-white">
             <CardHeader>
               <CardTitle className="text-center text-3xl md:text-4xl text-foreground">
                 Hello There! I'm <GradientText>Mihir Chavan</GradientText>
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="text-muted-foreground mb-6 text-lg">
+              <p className="text-gray-600 mb-6 text-lg">
                 Welcome to my personal corner on the world wide web.
               </p>
-              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
                 This is my own space to explore and express life's vibrance and variety. 
                 To know more about me, explore my passion projects, professional journey, and the 
                 services I offer.
               </p>
               <div className="mt-10 space-y-2">
-                <p className="text-muted-foreground">
+                <p className="text-gray-600">
                   Check out my latest creation:
                 </p>
                 <AnimatedGradientBorder className="inline-block">
