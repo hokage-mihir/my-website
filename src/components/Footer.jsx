@@ -78,7 +78,7 @@ const Footer = () => {
               Dharma Sthambha Yojna
             </a>
             <p className="mt-2 text-sm text-gray-400">
-              Support initiatives that transform lives through spiritual wisdom and meditation.
+              Support service initiatives that transform lives through education, river rejuvination, skill developement and more.
             </p>
           </div>
           
@@ -87,9 +87,6 @@ const Footer = () => {
             <h3 className="text-lg md:text-xl font-semibold mb-4">Legal</h3>
             <p className="text-sm text-gray-400 mb-1">© {new Date().getFullYear()} Mihir Chavan.</p>
             <p className="text-sm text-gray-400">All rights reserved.</p>
-            <div className="mt-4 text-xs text-gray-500">
-              <p>This website was created with React, Tailwind CSS, and ShadCN UI components.</p>
-            </div>
           </div>
         </div>
       </div>

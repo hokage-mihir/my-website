@@ -75,29 +75,9 @@ const HomePage = () => {
       
       <section className="py-12 bg-slate-50">
         <Container>
-          <h2 className="text-3xl font-bold mb-12 text-center">Services & Programs</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Programs & Consultation</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Jyotish Consultation Card */}
-            <AnimatedCard
-              title="Jyotish Consultation"
-              footer={
-                <Button 
-                  className="w-full bg-indigo-600 hover:bg-indigo-700"
-                  data-cal-link="hokagemihir/jyotish"
-                  data-cal-config='{"layout":"month_view"}'
-                >
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Book Consultation
-                </Button>
-              }
-            >
-              <p className="text-slate-600 mb-4">
-                Jyotish, meaning 'science of light', is the foremost Vedanga that illuminates our understanding of life's journey.
-                As an Astromani graduate and practicing astrologer, I combine traditional Vedic knowledge with contemporary insight
-                to help individuals find clarity and direction.
-              </p>
-            </AnimatedCard>
 
             {/* Art of Living Programs Card */}
             <AnimatedCard
@@ -120,6 +100,27 @@ const HomePage = () => {
                 <li>Happiness Program: Coming Soon</li>
                 <li>Online Meditation & Breath Workshop: Coming Soon</li>
               </ul>
+            </AnimatedCard>
+
+            {/* Jyotish Consultation Card */}
+            <AnimatedCard
+              title="Jyotish Consultation"
+              footer={
+                <Button 
+                  className="w-full bg-indigo-600 hover:bg-indigo-700"
+                  data-cal-link="hokagemihir/jyotish"
+                  data-cal-config='{"layout":"month_view"}'
+                >
+                  <Calendar className="w-4 h-4 mr-2" />
+                  Book Consultation
+                </Button>
+              }
+            >
+              <p className="text-slate-600 mb-4">
+                Jyotish, meaning 'science of light', is the foremost Vedanga that illuminates our understanding of life's journey.
+                As an Astromani graduate and practicing astrologer, I combine traditional Vedic knowledge with contemporary insight
+                to help individuals find clarity and direction.
+              </p>
             </AnimatedCard>
           </div>
         </Container>

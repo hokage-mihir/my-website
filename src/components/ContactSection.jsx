@@ -63,7 +63,7 @@ const ContactSection = () => {
                   
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 mr-3" />
-                    <span>+91 99301 75135</span>
+                    <span>+91 83697 90166 </span>
                   </div>
                 </div>
                 
