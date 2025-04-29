@@ -85,10 +85,10 @@ const HomePage = () => {
               footer={
                 <Button 
                   className="w-full bg-indigo-600 hover:bg-indigo-700"
-                  onClick={() => window.open('https://tally.so/r/w2oP4D', '_blank')}
+                  onClick={() => window.open('https://aolt.in/870022', '_blank')}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  Tell me more
+                  Register
                 </Button>
               }
             >
@@ -97,8 +97,8 @@ const HomePage = () => {
                 and realize their full potential of mind, body and spirit.
               </p>
               <ul className="list-disc pl-5 text-slate-600 space-y-1">
-                <li>Happiness Program: Coming Soon</li>
-                <li>Online Meditation & Breath Workshop: Coming Soon</li>
+                <li>Happiness Program: 23rd to 25th May</li>
+                {/*<li>Online Meditation & Breath Workshop: Coming Soon</li>*/}
               </ul>
             </AnimatedCard>
 
