@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useEffect } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { getCalApi } from "@calcom/embed-react";
@@ -8,6 +7,7 @@ import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import PassionProjectsPage from './pages/PassionProjectsPage';
+import ContactPage from './pages/ContactPage'; // Import the new Contact page
 
 function App() {
   // Initialize Cal.com
@@ -31,6 +31,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="projects" element={<PassionProjectsPage />} />
+          <Route path="contact" element={<ContactPage />} /> {/* Add the new Contact route */}
         </Route>
       </Routes>
     </BrowserRouter>
