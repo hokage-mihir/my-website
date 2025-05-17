@@ -23,13 +23,9 @@ const Welcome = () => {
                 Welcome to My Digital Sanctuary
               </h3>
               
-              <p className="text-slate-600 mb-6 text-lg leading-relaxed max-w-2xl mx-auto">
-                Where professional expertise meets spiritual wisdom to guide you toward balance and fulfillment.
-              </p>
-              
               <div className="space-y-2 text-slate-600 mb-8 max-w-2xl mx-auto">
                 <p className="leading-relaxed">
-                  By day, I navigate the intricacies of finance as a Program Manager at Redington's cloud business, bringing over 9 years of analytical precision to the corporate world.
+                  By day, I navigate the intricacies of finance as a Program Manager at Redington's cloud business, bringing over 9 years of analytical discipline to the corporate world.
                 </p>
                 
                 <p className="leading-relaxed">
@@ -37,7 +33,7 @@ const Welcome = () => {
                 </p>
                 
                 <p className="leading-relaxed">
-                  As a certified Facilitator for The Art of Living's Happiness Program, I've had the privilege of guiding countless individuals toward stress-free, purposeful living through ancient breathing techniques and meditation practices.
+                  As a Facilitator for The Art of Living's Happiness Program, I've had the privilege of guiding individuals toward stress-free, purposeful living through powerful breathing techniques and meditation practices.
                 </p>
               </div>
               
