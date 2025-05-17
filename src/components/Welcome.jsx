@@ -9,7 +9,7 @@ import { Spotlight } from '@/components/ui/spotlight';
 
 const Welcome = () => {
   return (
-    <section className="py-12 relative overflow-hidden bg-background" id="welcome">
+    <section className="py-6 relative overflow-hidden bg-background" id="welcome">
       <Container>
         <Spotlight className="rounded-3xl">
           <Card className="border-0 shadow-xl bg-white">
@@ -18,30 +18,34 @@ const Welcome = () => {
                 Hello There! I'm <GradientText>Mihir Chavan</GradientText>
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-gray-600 mb-6 text-lg">
-                Welcome to my personal corner on the world wide web.
+              <CardContent className="text-center px-6 py-8">
+              <h3 className="text-2xl font-medium text-slate-800 mb-4">
+                Welcome to My Digital Sanctuary
+              </h3>
+              
+              <p className="text-slate-600 mb-6 text-lg leading-relaxed max-w-2xl mx-auto">
+                Where professional expertise meets spiritual wisdom to guide you toward balance and fulfillment.
               </p>
-              <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                This is my own space to explore and express life's vibrance and variety. 
-                To know more about me, explore my passion projects, professional journey, and the 
-                services I offer.
-              </p>
-              <div className="mt-10 space-y-2">
-                <p className="text-gray-600">
-                  Check out my latest creation:
+              
+              <div className="space-y-2 text-slate-600 mb-8 max-w-2xl mx-auto">
+                <p className="leading-relaxed">
+                  By day, I navigate the intricacies of finance as a Program Manager at Redington's cloud business, bringing over 9 years of analytical precision to the corporate world.
                 </p>
-                <AnimatedGradientBorder className="inline-block">
-                  <a 
-                    href="https://moonmood.xyz/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 rounded-md bg-gradient-to-r from-indigo-500 to-teal-500 hover:from-indigo-600 hover:to-teal-600 text-white shadow-lg"
-                  >
-                    <span className="font-medium">Chandrashtam Calculator</span>
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </AnimatedGradientBorder>
+                
+                <p className="leading-relaxed">
+                  By calling, I'm a Vaidic Astrologer who helps individuals decode the cosmic blueprint of their lives, offering clarity and direction during times of uncertainty.
+                </p>
+                
+                <p className="leading-relaxed">
+                  As a certified Facilitator for The Art of Living's Happiness Program, I've had the privilege of guiding countless individuals toward stress-free, purposeful living through ancient breathing techniques and meditation practices.
+                </p>
+              </div>
+              
+              <div className="bg-slate-50 p-4 rounded-lg border border-slate-200 max-w-xl mx-auto">
+                <p className="font-medium text-slate-700 mb-2">Begin your journey to wellness and clarity</p>
+                <p className="text-slate-600 mb-0">
+                  Discover upcoming Art of Living workshops or schedule a Jyotish consultation in the section below.
+                </p>
               </div>
             </CardContent>
           </Card>

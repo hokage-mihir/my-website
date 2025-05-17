@@ -53,26 +53,6 @@ const HomePage = () => {
     <div>
       <Welcome />
       
-      {/* Page Navigation Section */}
-      <section className="py-12 bg-white">
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <NavCard 
-              to="/about"
-              icon={User}
-              title="About Me"
-              description="Learn about my background, skills, and professional journey"
-            />
-            <NavCard 
-              to="/projects"
-              icon={Lightbulb}
-              title="Passion Projects"
-              description="Explore my various interests and specialized skills"
-            />
-          </div>
-        </Container>
-      </section>
-      
       <section className="py-12 bg-slate-50">
         <Container>
           <h2 className="text-3xl font-bold mb-12 text-center">Programs & Consultation</h2>
@@ -82,24 +62,103 @@ const HomePage = () => {
             {/* Art of Living Programs Card */}
             <AnimatedCard
               title="Upcoming Art of Living Programs"
-              footer={
-                <Button 
-                  className="w-full bg-indigo-600 hover:bg-indigo-700"
-                  onClick={() => window.open('https://aolt.in/870022', '_blank')}
-                >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Register
-                </Button>
-              }
+              footer={null} // Removing the footer since we'll handle buttons within the content
             >
-              <p className="text-slate-600 mb-2">
-                The Art of Living offers programs that help individuals eliminate stress, experience deeper meditations, 
-                and realize their full potential of mind, body and spirit.
-              </p>
-              <ul className="list-disc pl-5 text-slate-600 space-y-1">
-                <li>Happiness Program: 23rd to 25th May</li>
-                {/*<li>Online Meditation & Breath Workshop: Coming Soon</li>*/}
-              </ul>
+              <div className="text-slate-600 mb-4">
+                <p className="mb-4">
+                  The Art of Living offers programs that help individuals eliminate stress, 
+                  experience deeper meditations, and realize their full potential of mind, 
+                  body and spirit.
+                </p>
+                
+                {/* Featured/Current Program Section */}
+                <div className="bg-indigo-50 rounded-lg p-4 mb-5 border border-indigo-100">
+                  <h4 className="font-medium text-indigo-800 mb-2">
+                    Featured Program
+                  </h4>
+                  <div className="flex justify-between items-center mb-2">
+                    <div className="font-medium">Happiness Program</div>
+                    <div className="text-sm bg-indigo-100 text-indigo-800 px-2 py-1 rounded">
+                      23rd to 25th May
+                    </div>
+                  </div>
+                  <p className="text-sm mb-3">
+                    Experience powerful breathing techniques, meditation, and wisdom to reduce stress
+                    and live with joy and purpose.
+                  </p>
+                  <Button 
+                    className="w-full bg-indigo-600 hover:bg-indigo-700"
+                    onClick={() => window.open('https://aolt.in/870022', '_blank')}
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Register Now
+                  </Button>
+                </div>
+                
+                {/* Future Programs Section */}
+                <div>
+                  <h4 className="font-medium text-slate-700 mb-3 flex items-center">
+                    <Calendar className="w-4 h-4 mr-2 text-indigo-600" />
+                    Future Programs
+                  </h4>
+                  
+                  <div className="space-y-3">
+                    <div className="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-colors">
+                      <div className="flex justify-between items-center mb-1">
+                        <div className="font-medium">Happiness Program (10-15 June)</div>
+                        <div className="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">
+                          June 2025
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <p className="text-xs text-slate-500">
+                          Learn foundational breathing techniques for stress management and joyful living
+                        </p>
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="text-xs h-7 border-indigo-200 text-indigo-700 hover:bg-indigo-50"                         
+                          onClick={() => window.open('https://aolt.in/870090', '_blank')}
+                        >
+                          Register
+                        </Button>
+                      </div>
+                    </div>
+                    
+                    <div className="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-colors">
+                      <div className="flex justify-between items-center mb-1">
+                        <div className="font-medium">Happiness Program (24-29 June)</div>
+                        <div className="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">
+                          June 2025
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <p className="text-xs text-slate-500">
+                        Learn foundational breathing techniques for stress management and joyful living
+                        </p>
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="text-xs h-7 border-indigo-200 text-indigo-700 hover:bg-indigo-50"
+                          onClick={() => window.open('https://aolt.in/870094', '_blank')}
+                        >        
+                          Register
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                 {/* <div className="mt-4 text-center">
+                    <Link 
+                      to="/programs" 
+                      className="text-sm text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center"
+                    >
+                      View all upcoming programs
+                      <ChevronRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  </div> */}
+                </div>
+              </div>
             </AnimatedCard>
 
             {/* Jyotish Consultation Card */}
@@ -116,11 +175,53 @@ const HomePage = () => {
                 </Button>
               }
             >
-              <p className="text-slate-600 mb-4">
-                Jyotish, meaning 'science of light', is the foremost Vedanga that illuminates our understanding of life's journey.
-                As an Astromani graduate and practicing astrologer, I combine traditional Vedic knowledge with contemporary insight
-                to help individuals find clarity and direction.
-              </p>
+              <div className="flex flex-col h-full">
+                <p className="text-slate-600 mb-5">
+                  Jyotish, meaning 'science of light', is the foremost Vedanga that illuminates our understanding of life's journey.
+                  As an Astromani graduate and practicing astrologer, I combine traditional Vedic knowledge with contemporary insight
+                  to help individuals find clarity and direction.
+                </p>
+                
+                {/* Adding consultation types to create more content */}
+                <div className="bg-amber-50 rounded-lg p-4 mb-5 border border-amber-100">
+                  <h4 className="font-medium text-amber-800 mb-3">Consultation Types</h4>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-amber-100 p-2 rounded-full text-amber-700 mt-1">
+                        <User className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <h5 className="font-medium text-slate-700">Personal Horoscope Reading</h5>
+                        <p className="text-sm text-slate-600">
+                          In-depth analysis of your birth chart to understand your strengths, challenges, and life path.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <div className="bg-amber-100 p-2 rounded-full text-amber-700 mt-1">
+                        <Lightbulb className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <h5 className="font-medium text-slate-700">Specific Question Analysis</h5>
+                        <p className="text-sm text-slate-600">
+                          Focused guidance on particular areas such as career, relationships, or health concerns.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Additional explanation about methodology */}
+                <div className="rounded-lg border border-slate-200 p-4 mb-1">
+                  <h4 className="font-medium text-slate-700 mb-2">My Approach</h4>
+                  <p className="text-sm text-slate-600">
+                    I focus on empowering individuals through knowledge rather than fear. Each reading is personalized 
+                    to provide practical insights that can be applied to navigate life's challenges and make informed decisions.
+                  </p>
+                </div>
+              </div>
             </AnimatedCard>
           </div>
         </Container>

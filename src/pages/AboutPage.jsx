@@ -18,13 +18,27 @@ const ProfileSection = () => {
           </div>
         </div>
         
-        <div className="text-center md:text-left">
-          <h2 className="text-3xl font-bold mb-4">About Me</h2>
-          <p className="text-slate-700 max-w-2xl leading-relaxed">
-            Your typical city bred, corporate employee with a varied experience in the finance field. With a bachelors 
-            in commerce and MBA in Finance, I have been pursuing a work journey that aligns with my expertise. Aside 
-            from work, I am also a certified marma practitioner and an astrologer in training. I have a certain love 
-            of Microsoft Excel which I enjoy sharing with others to make life with Excel a much better experience.
+        <div className="text-center md:text-left max-w-4xl mx-auto py-8 px-4">
+          <h2 className="text-3xl font-bold mb-6 text-slate-900">About Me</h2>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            Hey there! I'm <span className="font-semibold">Mihir Chavan</span> — an MBA Finance graduate, Vaidic Astrologer, and Faculty with The Art of Living.
+          </p>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            Born and raised in Thane, Maharashtra, I completed my schooling and higher education from Mumbai University. To gain a broader perspective and enhance my experience, I pursued my Master's from Sri Sri University in Cuttack, Odisha.
+          </p>
+  
+          <h3 className="text-2xl font-semibold mb-4 text-slate-800">Professional Journey</h3>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            With over 9 years of experience in the Finance field, I currently work as a Program Manager with Redington's cloud business. I also have a special fondness for Microsoft Excel and enjoy sharing my knowledge to help others have a much better experience with this powerful tool.
+          </p>
+          
+          <h3 className="text-2xl font-semibold mb-4 text-slate-800">Holistic Pursuits</h3>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            Beyond my professional life, I'm a certified Marma practitioner and Vaidic astrologer. The latest feather in my cap—and perhaps my favorite—is being a trainer for The Art of Living's Happiness Program.
+          </p>
+          
+          <p className="text-slate-700 leading-relaxed">
+            Yoga and meditation have long fascinated me, and being able to help people experience the joy and relief they provide is one of my key driving factors.
           </p>
         </div>
       </div>
