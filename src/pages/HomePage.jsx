@@ -79,7 +79,7 @@ const HomePage = () => {
                   <div className="flex justify-between items-center mb-2">
                     <div className="font-medium">Happiness Program</div>
                     <div className="text-sm bg-indigo-100 text-indigo-800 px-2 py-1 rounded">
-                      23rd to 25th May
+                      10th to 15th June
                     </div>
                   </div>
                   <p className="text-sm mb-3">
@@ -88,7 +88,7 @@ const HomePage = () => {
                   </p>
                   <Button 
                     className="w-full bg-indigo-600 hover:bg-indigo-700"
-                    onClick={() => window.open('https://aolt.in/870022', '_blank')}
+                    onClick={() => window.open('https://aolt.in/870090', '_blank')}
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Register Now
@@ -97,13 +97,9 @@ const HomePage = () => {
                 
                 {/* Future Programs Section */}
                 <div>
-                  <h4 className="font-medium text-slate-700 mb-3 flex items-center">
-                    <Calendar className="w-4 h-4 mr-2 text-indigo-600" />
-                    Future Programs
-                  </h4>
                   
-                  <div className="space-y-3">
-                    <div className="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-colors">
+                   <div className="space-y-3">
+                   {/* <div className="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-colors">
                       <div className="flex justify-between items-center mb-1">
                         <div className="font-medium">Happiness Program (10-15 June)</div>
                         <div className="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">
@@ -123,7 +119,7 @@ const HomePage = () => {
                           Register
                         </Button>
                       </div>
-                    </div>
+                    </div> */}
                     
                     <div className="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-colors">
                       <div className="flex justify-between items-center mb-1">
@@ -182,42 +178,12 @@ const HomePage = () => {
                   to help individuals find clarity and direction.
                 </p>
                 
-                {/* Adding consultation types to create more content */}
-                <div className="bg-amber-50 rounded-lg p-4 mb-5 border border-amber-100">
-                  <h4 className="font-medium text-amber-800 mb-3">Consultation Types</h4>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <div className="bg-amber-100 p-2 rounded-full text-amber-700 mt-1">
-                        <User className="h-4 w-4" />
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-slate-700">Personal Horoscope Reading</h5>
-                        <p className="text-sm text-slate-600">
-                          In-depth analysis of your birth chart to understand your strengths, challenges, and life path.
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-3">
-                      <div className="bg-amber-100 p-2 rounded-full text-amber-700 mt-1">
-                        <Lightbulb className="h-4 w-4" />
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-slate-700">Specific Question Analysis</h5>
-                        <p className="text-sm text-slate-600">
-                          Focused guidance on particular areas such as career, relationships, or health concerns.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 
                 {/* Additional explanation about methodology */}
                 <div className="rounded-lg border border-slate-200 p-4 mb-1">
                   <h4 className="font-medium text-slate-700 mb-2">My Approach</h4>
                   <p className="text-sm text-slate-600">
-                    I focus on empowering individuals through knowledge rather than fear. Each reading is personalized 
+                    I focus on empowering individuals through knowledge rather than fear. <br></br> Each reading is personalized 
                     to provide practical insights that can be applied to navigate life's challenges and make informed decisions.
                   </p>
                 </div>
