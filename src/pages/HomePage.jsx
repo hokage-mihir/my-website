@@ -99,27 +99,27 @@ const HomePage = () => {
                 <div>
                   
                    <div className="space-y-3">
-                   {/* <div className="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-colors">
+                    <div className="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-colors">
                       <div className="flex justify-between items-center mb-1">
-                        <div className="font-medium">Happiness Program (10-15 June)</div>
+                        <div className="font-medium">Online Meditation and Breath Workshop (6-9 June)</div>
                         <div className="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">
                           June 2025
                         </div>
                       </div>
                       <div className="flex justify-between items-center">
                         <p className="text-xs text-slate-500">
-                          Learn foundational breathing techniques for stress management and joyful living
+                          Learn foundational breathing techniques for stress management and joyful living, now online!
                         </p>
                         <Button 
                           variant="outline" 
                           size="sm" 
                           className="text-xs h-7 border-indigo-200 text-indigo-700 hover:bg-indigo-50"                         
-                          onClick={() => window.open('https://aolt.in/870090', '_blank')}
+                          onClick={() => window.open('https://www.artofliving.online/registration.php?event_id=879522&ct_id=684', '_blank')}
                         >
                           Register
                         </Button>
                       </div>
-                    </div> */}
+                    </div> 
                     
                     <div className="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-colors">
                       <div className="flex justify-between items-center mb-1">
