@@ -25,9 +25,27 @@ const routes = [
     changefreq: 'monthly'
   },
   {
+    path: '/aol',
+    lastmod: new Date().toISOString().split('T')[0],
+    priority: '0.9',
+    changefreq: 'weekly'
+  },
+  {
+    path: '/jyotish',
+    lastmod: new Date().toISOString().split('T')[0],
+    priority: '0.9',
+    changefreq: 'weekly'
+  },
+  {
     path: '/projects',
     lastmod: new Date().toISOString().split('T')[0],
     priority: '0.8',
+    changefreq: 'monthly'
+  },
+  {
+    path: '/contact',
+    lastmod: new Date().toISOString().split('T')[0],
+    priority: '0.7',
     changefreq: 'monthly'
   }
 ];

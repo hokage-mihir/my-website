@@ -3,6 +3,7 @@ import React from 'react';
 import { FileSpreadsheet, Stars, Waves, Calendar, ExternalLink, Globe, Code } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import SEOHead from '../components/SEOHead';
 
 // Aceternity-inspired feature card
 const FeatureCard = ({ icon: Icon, title, description, actionButton }) => {
@@ -49,6 +50,12 @@ const PassionProjectsPage = () => {
 
   return (
     <div className="py-12">
+      <SEOHead 
+        title="Passion Projects | Mihir Chavan - Excel, Jyotish & Marma Healing"
+        description="Explore Mihir Chavan's passion projects including Excel automation, Jyotish consultations, and Marma healing services. Professional expertise beyond finance."
+        keywords="Mihir Chavan projects, Excel automation services, Jyotish consultations, Marma healing, passion projects, professional services"
+        ogImage="https://mihirchavan.in/og-image.jpg"
+      />
       <Container>
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">My Passion Projects</h1>

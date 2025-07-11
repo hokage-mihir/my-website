@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
+import SEOHead from '../components/SEOHead';
 
 // Aceternity-inspired components
 const ProfileSection = () => {
@@ -113,6 +114,12 @@ const CareerTimeline = () => {
 const AboutPage = () => {
   return (
     <div className="pt-8 pb-16">
+      <SEOHead 
+        title="About Mihir Chavan | Excel Expert & Jyotish Practitioner"
+        description="Learn about Mihir Chavan's professional journey as a finance expert, Excel consultant, and Jyotish practitioner. Discover his expertise in Microsoft Excel, Vedic astrology, and Marma healing."
+        keywords="Mihir Chavan about, Excel expert background, Jyotish practitioner experience, finance professional, Marma healing practitioner"
+        ogImage="https://mihirchavan.in/og-image.jpg"
+      />
       <Container>
         <ProfileSection />
         <CareerTimeline />
