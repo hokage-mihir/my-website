@@ -81,12 +81,12 @@ const HomePage = () => {
                 {/* Featured/Current Program Section */}
                 <div className="bg-indigo-50 rounded-lg p-4 mb-5 border border-indigo-100">
                   <h4 className="font-medium text-indigo-800 mb-2">
-                    Featured Program
+                    Upcoming Program
                   </h4>
                   <div className="flex justify-between items-center mb-2">
                     <div className="font-medium">Happiness Program</div>
                     <div className="text-sm bg-indigo-100 text-indigo-800 px-2 py-1 rounded">
-                      10th to 15th June
+                      25th to 27th July
                     </div>
                   </div>
                   <p className="text-sm mb-3">
@@ -95,71 +95,10 @@ const HomePage = () => {
                   </p>
                   <Button 
                     className="w-full bg-indigo-600 hover:bg-indigo-700"
-                    onClick={() => window.open('https://aolt.in/870090', '_blank')}
+                    onClick={() => window.open('https://wa.me/918369790166?text=I%20want%20to%20know%20more%20about%20the%20upcoming%20happiness%20program', '_blank')}
                   >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Register Now
+                    Know More
                   </Button>
-                </div>
-                
-                {/* Future Programs Section */}
-                <div>
-                  
-                   <div className="space-y-3">
-                    <div className="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-colors">
-                      <div className="flex justify-between items-center mb-1">
-                        <div className="font-medium">Online Meditation and Breath Workshop (6-9 June)</div>
-                        <div className="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">
-                          June 2025
-                        </div>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <p className="text-xs text-slate-500">
-                          Learn foundational breathing techniques for stress management and joyful living, now online!
-                        </p>
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
-                          className="text-xs h-7 border-indigo-200 text-indigo-700 hover:bg-indigo-50"                         
-                          onClick={() => window.open('https://www.artofliving.online/registration.php?event_id=879522&ct_id=684', '_blank')}
-                        >
-                          Register
-                        </Button>
-                      </div>
-                    </div> 
-                    
-                    <div className="border border-slate-200 rounded-lg p-3 hover:bg-slate-50 transition-colors">
-                      <div className="flex justify-between items-center mb-1">
-                        <div className="font-medium">Happiness Program (24-29 June)</div>
-                        <div className="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">
-                          June 2025
-                        </div>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <p className="text-xs text-slate-500">
-                        Learn foundational breathing techniques for stress management and joyful living
-                        </p>
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
-                          className="text-xs h-7 border-indigo-200 text-indigo-700 hover:bg-indigo-50"
-                          onClick={() => window.open('https://aolt.in/870094', '_blank')}
-                        >        
-                          Register
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                  
-                 <div className="mt-4 text-center">
-                    <Link 
-                      to="/aol" 
-                      className="text-sm text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center"
-                    >
-                      View all upcoming programs
-                      <ChevronRight className="w-4 h-4 ml-1" />
-                    </Link>
-                  </div>
                 </div>
               </div>
             </AnimatedCard>

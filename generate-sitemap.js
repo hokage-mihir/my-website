@@ -47,6 +47,12 @@ const routes = [
     lastmod: new Date().toISOString().split('T')[0],
     priority: '0.7',
     changefreq: 'monthly'
+  },
+  {
+    path: '/terms',
+    lastmod: new Date().toISOString().split('T')[0],
+    priority: '0.5',
+    changefreq: 'yearly'
   }
 ];
 

@@ -130,38 +130,6 @@ const PassionProjectsPage = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Marma Section */}
-          <FeatureCard
-            icon={Waves}
-            title="Marma"
-            description={
-              <>
-                <p className="mb-4">
-                  In August 2022 I had the pleasure of learning Medical Varmalogy or Marma Chikitsa from 
-                  Thirumoolar Varmalogy Institute.
-                </p>
-                <p className="mb-4">
-                  Varmalogy is a systematic study of vital points (varmams) on human body and also on animal bodies. 
-                  The vital points (varmams) are located on nerves, nerve joints, bones, muscles, ligaments and internal 
-                  organs. Right or wrong vibration of the vital points (varmams) will either promote or impair health. 
-                </p>
-                <p>
-                  This is an ancient practice which gives surprisingly good results in just a couple of sessions lasting not 
-                  more than 10-15 mins. In my personal experience, it has been strongly effective in dealing with pains, 
-                  aches and regulating body heat.
-                </p>
-              </>
-            }
-            actionButton={
-              <Button 
-                className="bg-indigo-600 hover:bg-indigo-700 w-full"
-                onClick={handleMarmaClick}
-              >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Request Consultation
-              </Button>
-            }
-          />
           
           {/* NEW: Website & App Building Section */}
           <FeatureCard
