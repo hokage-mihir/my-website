@@ -7,7 +7,9 @@ import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import PassionProjectsPage from './pages/PassionProjectsPage';
-import ContactPage from './pages/ContactPage'; // Import the new Contact page
+import ContactPage from './pages/ContactPage';
+import ArtOfLivingPortal from './pages/ArtOfLivingPortal';
+import JyotishPortal from './pages/JyotishPortal';
 
 function App() {
   // Initialize Cal.com
@@ -30,8 +32,10 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
+          <Route path="aol" element={<ArtOfLivingPortal />} />
+          <Route path="jyotish" element={<JyotishPortal />} />
           <Route path="projects" element={<PassionProjectsPage />} />
-          <Route path="contact" element={<ContactPage />} /> {/* Add the new Contact route */}
+          <Route path="contact" element={<ContactPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

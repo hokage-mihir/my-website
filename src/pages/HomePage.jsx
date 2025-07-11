@@ -144,15 +144,15 @@ const HomePage = () => {
                     </div>
                   </div>
                   
-                 {/* <div className="mt-4 text-center">
+                 <div className="mt-4 text-center">
                     <Link 
-                      to="/programs" 
+                      to="/aol" 
                       className="text-sm text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center"
                     >
                       View all upcoming programs
                       <ChevronRight className="w-4 h-4 ml-1" />
                     </Link>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </AnimatedCard>

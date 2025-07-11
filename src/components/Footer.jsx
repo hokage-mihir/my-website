@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, Heart, Home, User, Lightbulb, Mail } from 'lucide-react';
+import { Instagram, Linkedin, Heart, Home, User, Lightbulb, Mail, Flower2 } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -22,6 +22,12 @@ const Footer = () => {
                 <Link to="/about" className="flex items-center text-gray-300 hover:text-white transition-colors">
                   <User className="h-4 w-4 mr-2" />
                   About Me
+                </Link>
+              </li>
+              <li>
+                <Link to="/aol" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                  <Flower2 className="h-4 w-4 mr-2" />
+                  Art of Living
                 </Link>
               </li>
               <li>
