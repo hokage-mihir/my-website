@@ -46,10 +46,13 @@ const TermsConditionsPage = () => {
                 <h3 className="text-xl font-medium mb-3">2.1 Jyotish Consultations</h3>
                 <ul className="list-disc pl-6 mb-4 space-y-2">
                   <li>Vedic astrology guidance and insights</li>
-                  <li>Typical duration: 45 minutes per session</li>
-                  <li>Fee: ₹1,100 per consultation</li>
+                  <li>Complete Birth Chart Analysis: 60 minutes - ₹2,500</li>
+                  <li>30 min Consultation: 30 minutes - ₹1,500</li>
+                  <li>60 min Consultation for 2 People: 60 minutes - ₹3,000</li>
+                  <li>Kundali Preparation: PDF format - ₹500</li>
+                  <li>Kundali Preparation and Years Prediction: Written analysis - ₹1000</li>
                   <li>Available online and in-person (Mumbai)</li>
-                  <li>Digital consultation report provided</li>
+                  <li>No recordings will be provided for any consultations</li>
                 </ul>
 
                 <h3 className="text-xl font-medium mb-3">2.2 Excel Consultations</h3>
@@ -182,10 +185,10 @@ const TermsConditionsPage = () => {
 
                 <h3 className="text-xl font-medium mb-3">7.3 Session Recording Policy</h3>
                 <ul className="list-disc pl-6 mb-4 space-y-2">
-                  <li>Jyotish consultations may be audio recorded for creating digital consultation reports</li>
-                  <li>Audio recordings are stored temporarily and deleted after document creation</li>
-                  <li>Recordings are not shared with anyone and remain confidential</li>
-                  <li>Clients will be informed before any recording begins</li>
+                  <li>No recordings will be provided for any Jyotish consultations</li>
+                  <li>Sessions are conducted live without audio or video recording</li>
+                  <li>Clients are encouraged to take notes during the consultation</li>
+                  <li>Important insights and recommendations will be clearly communicated during the session</li>
                 </ul>
               </section>
 

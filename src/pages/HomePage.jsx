@@ -1,9 +1,9 @@
 // src/pages/HomePage.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, ExternalLink, ChevronRight, User, Lightbulb } from 'lucide-react';
+import { Calendar, ChevronRight, Phone, MessageCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { GradientText } from '@/components/ui/text-gradient';
 import { Spotlight } from '@/components/ui/spotlight';
@@ -86,19 +86,48 @@ const HomePage = () => {
                   <div className="flex justify-between items-center mb-2">
                     <div className="font-medium">Happiness Program</div>
                     <div className="text-sm bg-indigo-100 text-indigo-800 px-2 py-1 rounded">
-                      25th to 27th July
+                      24th to 27th July
                     </div>
                   </div>
                   <p className="text-sm mb-3">
                     Experience powerful breathing techniques, meditation, and wisdom to reduce stress
                     and live with joy and purpose.
                   </p>
-                  <Button 
-                    className="w-full bg-indigo-600 hover:bg-indigo-700"
-                    onClick={() => window.open('https://wa.me/918369790166?text=I%20want%20to%20know%20more%20about%20the%20upcoming%20happiness%20program', '_blank')}
-                  >
-                    Know More
-                  </Button>
+                </div>
+                
+                <div className="mt-4">
+                  <div className="flex gap-1 mb-6">
+                    <Button 
+                      className="flex-1 bg-green-600 hover:bg-green-700 text-xs sm:text-sm px-2 py-2"
+                      onClick={() => window.open('https://aolt.in/894652', '_blank')}
+                    >
+                      Register
+                    </Button>
+                    <Button 
+                      className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-xs sm:text-sm px-2 py-2"
+                      onClick={() => window.open('https://wa.me/918369790166?text=I%20want%20to%20know%20more%20about%20the%20upcoming%20happiness%20program', '_blank')}
+                    >
+                      <MessageCircle className="w-3 h-3 mr-1" />
+                      <span className="hidden sm:inline">WhatsApp</span>
+                      <span className="sm:hidden">WA</span>
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      className="flex-1 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white text-xs sm:text-sm px-2 py-2"
+                      onClick={() => window.open('tel:+918369790166', '_self')}
+                    >
+                      <Phone className="w-3 h-3 mr-1" />
+                      Call
+                    </Button>
+                  </div>
+                  <Link to="/aol">
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                    >
+                      View All Programs
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </AnimatedCard>

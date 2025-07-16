@@ -1,19 +1,31 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, Star, Moon, Sun, Globe, BookOpen, Award, CheckCircle, ChevronDown, ChevronRight, ExternalLink, Phone, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Calendar, Clock, Star, Moon, Sun, Globe, BookOpen, Award, CheckCircle, ChevronDown, ChevronRight, ExternalLink, Phone, Mail, Home, ChevronRight as BreadcrumbChevron } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Separator } from "@/components/ui/separator";
+import SEOHead from '../components/SEOHead';
+import OptimizedImage from '@/components/ui/optimized-image';
 
 // Hero Section Component
 const HeroSection = () => {
+  const handleLearnMore = () => {
+    const faqSection = document.getElementById('understanding-jyotish-section');
+    if (faqSection) {
+      faqSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative h-[500px] bg-gradient-to-r from-purple-900/95 to-indigo-900/95 text-white overflow-hidden">
+    <section className="relative h-[400px] md:h-[500px] bg-gradient-to-r from-purple-900/95 to-indigo-900/95 text-white overflow-hidden">
       <div className="absolute inset-0">
-        <img 
+        <OptimizedImage 
           src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?auto=format&fit=crop&w=2000&q=80" 
-          alt="Starry night sky representing cosmic wisdom" 
+          alt="Starry night sky representing ancient Vedic wisdom and cosmic knowledge for Jyotish consultations" 
           className="w-full h-full object-cover opacity-40"
+          width="2000"
+          height="1200"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/60 to-indigo-900/60" />
         
@@ -28,9 +40,26 @@ const HeroSection = () => {
       
       <Container className="relative h-full flex items-center">
         <div className="max-w-3xl">
+          {/* Breadcrumb Navigation */}
+          <nav className="flex items-center text-sm sm:text-base mb-6" aria-label="Breadcrumb">
+            <div className="flex items-center">
+              <Link 
+                to="/" 
+                className="flex items-center text-purple-200/80 hover:text-white transition-colors duration-200 group"
+                aria-label="Return to Mihir Chavan's main website"
+              >
+                <Home className="h-4 w-4 mr-1 group-hover:scale-110 transition-transform" />
+                <span className="hidden sm:inline">Mihir Chavan</span>
+                <span className="sm:hidden">Home</span>
+              </Link>
+              <BreadcrumbChevron className="h-4 w-4 mx-2 text-purple-300/60" />
+              <span className="text-yellow-400 font-medium">Jyotish</span>
+            </div>
+          </nav>
+          
           <div className="flex items-center mb-4">
             <Star className="h-8 w-8 mr-3 text-yellow-400" />
-            <span className="text-yellow-400 font-medium tracking-wide">Jyotish Consultation</span>
+            <span className="text-yellow-400 font-medium tracking-wide">Professional Vedic Astrology</span>
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
@@ -48,14 +77,16 @@ const HeroSection = () => {
               size="lg" 
               className="bg-yellow-600 hover:bg-yellow-700 text-purple-900 font-semibold px-8 py-3"
               data-cal-link="hokagemihir/jyotish"
+              aria-label="Book Jyotish consultation appointment with Mihir Chavan"
             >
               <Calendar className="w-5 h-5 mr-2" />
               Book Consultation
             </Button>
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-purple-900 px-8 py-3"
+              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-purple-900 transition-all duration-200 px-8 py-3"
+              onClick={handleLearnMore}
+              aria-label="Learn more about Jyotish and Vedic astrology services"
             >
               <BookOpen className="w-5 h-5 mr-2" />
               Learn About Jyotish
@@ -70,13 +101,19 @@ const HeroSection = () => {
 // Astrologer Introduction Component
 const AstrologerIntroduction = () => {
   return (
-    <section className="py-16 bg-gradient-to-br from-purple-50 to-indigo-50">
+    <section id="about-section" className="py-16 bg-gradient-to-br from-purple-50 to-indigo-50">
       <Container>
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/3">
             <div className="relative w-64 h-64 mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-200 to-indigo-300 rounded-full flex items-center justify-center shadow-xl">
-                <span className="text-6xl text-purple-800 font-semibold">M</span>
+              <div className="absolute inset-0 rounded-full overflow-hidden shadow-xl">
+                <OptimizedImage 
+                  src="/profile.png" 
+                  alt="Mihir Chavan - Astro Shiromani and Astromani graduate, Professional Vedic Astrologer" 
+                  className="w-full h-full object-cover"
+                  width="256"
+                  height="256"
+                />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-yellow-600 rounded-full p-3 shadow-lg">
                 <Star className="h-6 w-6 text-white" />
@@ -92,9 +129,10 @@ const AstrologerIntroduction = () => {
             </h2>
             
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              As an Astromani graduate from the prestigious Asttrolok institute under world-renowned 
-              astrologer Shri Alok Khandelwal, I combine traditional Vedic wisdom with contemporary 
-              understanding to provide meaningful insights into your life's journey.
+              As an Astro Shiromani (advanced certification) and Astromani graduate from the prestigious 
+              Asttrolok institute under world-renowned astrologer Shri Alok Khandelwal, I bring deep 
+              expertise in traditional Vedic wisdom combined with contemporary understanding to provide 
+              meaningful insights into your life's journey.
             </p>
             
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
@@ -107,6 +145,10 @@ const AstrologerIntroduction = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-center">
                 <Award className="h-5 w-5 text-yellow-600 mr-3" />
+                <span className="text-gray-700">Astro Shiromani (Advanced) - Asttrolok</span>
+              </div>
+              <div className="flex items-center">
+                <Award className="h-5 w-5 text-yellow-600 mr-3" />
                 <span className="text-gray-700">Astromani Graduate - Asttrolok</span>
               </div>
               <div className="flex items-center">
@@ -116,10 +158,6 @@ const AstrologerIntroduction = () => {
               <div className="flex items-center">
                 <Globe className="h-5 w-5 text-indigo-600 mr-3" />
                 <span className="text-gray-700">Modern Contextual Insights</span>
-              </div>
-              <div className="flex items-center">
-                <Star className="h-5 w-5 text-yellow-600 mr-3" />
-                <span className="text-gray-700">Lifelong Student of Cosmic Sciences</span>
               </div>
             </div>
           </div>
@@ -134,7 +172,7 @@ const ServicesShowcase = () => {
   const services = [
     {
       title: "Complete Birth Chart Analysis",
-      duration: "90 minutes",
+      duration: "60 minutes",
       description: "A comprehensive reading of your entire birth chart, covering personality, career, relationships, health, and spiritual path.",
       includes: [
         "Detailed personality analysis",
@@ -144,13 +182,14 @@ const ServicesShowcase = () => {
         "Spiritual growth opportunities",
         "Timing of major life events"
       ],
+      note: "No recordings will be provided",
       icon: Sun,
-      price: "₹3,500",
+      price: "₹2,500",
       popular: true
     },
     {
-      title: "Specific Question Consultation",
-      duration: "45 minutes",
+      title: "30 min Consultation",
+      duration: "30 minutes",
       description: "Focused guidance on a specific area of life - career decisions, relationship questions, or timing of important events.",
       includes: [
         "Targeted analysis for your question",
@@ -159,24 +198,42 @@ const ServicesShowcase = () => {
         "Remedial suggestions if needed",
         "Follow-up guidance"
       ],
+      note: "No recordings will be provided",
       icon: Moon,
-      price: "₹2,000",
+      price: "₹1,500",
       popular: false
     },
     {
-      title: "Annual Forecast Reading",
+      title: "60 min Consultation for 2 People",
       duration: "60 minutes", 
-      description: "Understand the cosmic trends for the year ahead and how they'll influence different areas of your life.",
+      description: "Joint consultation session for couples or family members to understand compatibility and shared life paths.",
       includes: [
-        "Month-by-month overview",
-        "Key opportunities and challenges",
-        "Optimal timing for major decisions",
-        "Relationship and career trends",
-        "Health and financial outlook"
+        "Individual chart analysis for both",
+        "Compatibility assessment",
+        "Relationship dynamics insights",
+        "Joint life path guidance",
+        "Timing for important decisions",
+        "Family harmony recommendations"
       ],
+      note: "No recordings will be provided",
       icon: Star,
-      price: "₹2,800",
+      price: "₹3,000",
       popular: false
+    }
+  ];
+
+  const additionalServices = [
+    {
+      title: "Kundali Preparation",
+      description: "Complete birth chart preparation in PDF format",
+      price: "₹500",
+      note: "Soft copy (PDF)"
+    },
+    {
+      title: "Kundali Preparation and Years Prediction",
+      description: "Complete birth chart with detailed yearly predictions",
+      price: "₹1000",
+      note: "Comprehensive written analysis"
     }
   ];
 
@@ -191,7 +248,7 @@ const ServicesShowcase = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -230,6 +287,11 @@ const ServicesShowcase = () => {
                         </li>
                       ))}
                     </ul>
+                    <div className="mt-4 pt-4 border-t border-gray-100">
+                      <p className="text-sm text-gray-700">
+                        <strong>Please note:</strong> {service.note}
+                      </p>
+                    </div>
                   </div>
                   
                   <Button 
@@ -246,6 +308,47 @@ const ServicesShowcase = () => {
               </Card>
             );
           })}
+        </div>
+
+        {/* Additional Services */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold mb-4 text-gray-900">Additional Services</h3>
+            <p className="text-lg text-gray-600">
+              Complementary services to enhance your astrological journey
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {additionalServices.map((service, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow border">
+                <CardContent className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h4 className="text-lg font-bold text-gray-900">{service.title}</h4>
+                      <p className="text-gray-600 text-sm mt-1">{service.description}</p>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-xl font-bold text-purple-600">{service.price}</div>
+                      <div className="text-xs text-gray-500">{service.note}</div>
+                    </div>
+                  </div>
+                  
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
+                    data-tally-open={service.title === "Kundali Preparation" ? "kundali-form" : "year-report-form"}
+                    data-tally-layout="modal"
+                    data-tally-width="600"
+                    data-tally-emoji-text="🌟"
+                    data-tally-emoji-animation="wave"
+                  >
+                    Request Service
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </Container>
     </section>
@@ -356,7 +459,7 @@ const AboutJyotishSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section id="understanding-jyotish-section" className="py-16 bg-white">
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-gray-900">Understanding Jyotish</h2>
@@ -371,6 +474,9 @@ const AboutJyotishSection = () => {
               <button
                 onClick={() => setExpandedSection(expandedSection === index ? null : index)}
                 className="w-full text-left p-6 bg-gradient-to-r from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100 rounded-lg transition-colors border border-purple-100"
+                aria-expanded={expandedSection === index}
+                aria-controls={`section-${index}`}
+                aria-label={`Toggle ${section.title} section`}
               >
                 <div className="flex justify-between items-center">
                   <h3 className="font-semibold text-gray-900 text-lg">{section.title}</h3>
@@ -383,7 +489,12 @@ const AboutJyotishSection = () => {
               </button>
               
               {expandedSection === index && (
-                <div className="p-6 bg-white border border-purple-100 rounded-b-lg">
+                <div 
+                  id={`section-${index}`}
+                  className="p-6 bg-white border border-purple-100 rounded-b-lg"
+                  role="region"
+                  aria-labelledby={`section-title-${index}`}
+                >
                   <p className="text-gray-700 leading-relaxed">{section.content}</p>
                 </div>
               )}
@@ -396,6 +507,8 @@ const AboutJyotishSection = () => {
             variant="outline" 
             size="lg" 
             className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
+            onClick={() => window.open('https://www.asttrolok.com/', '_blank')}
+            aria-label="Learn more about Vedic astrology at Asttrolok Institute"
           >
             <ExternalLink className="w-5 h-5 mr-2" />
             Learn More About Vedic Astrology
@@ -408,35 +521,36 @@ const AboutJyotishSection = () => {
 
 // Testimonials Component
 const TestimonialsSection = () => {
-  const testimonials = [
-    {
-      name: "Priya K.",
-      role: "Software Manager",
-      content: "The insights from my birth chart reading helped me understand my career struggles and gave me clarity on the right path forward. The timing predictions were remarkably accurate.",
-      rating: 5,
-      category: "Career Guidance"
-    },
-    {
-      name: "Rajesh M.",
-      role: "Entrepreneur", 
-      content: "I was skeptical at first, but the consultation provided incredible insights into my relationship patterns and helped me make better decisions in my personal life.",
-      rating: 5,
-      category: "Relationship Insights"
-    },
-    {
-      name: "Ananya S.",
-      role: "Creative Professional",
-      content: "The annual forecast reading helped me plan my year strategically. Understanding the cosmic trends gave me confidence in timing major decisions.",
-      rating: 5,
-      category: "Life Planning"
-    }
-  ];
+  // Testimonials data - currently disabled but ready for implementation
+  // const testimonials = [
+  //   {
+  //     name: "Priya K.",
+  //     role: "Software Manager",
+  //     content: "The insights from my birth chart reading helped me understand my career struggles and gave me clarity on the right path forward. The timing predictions were remarkably accurate.",
+  //     rating: 5,
+  //     category: "Career Guidance"
+  //   },
+  //   {
+  //     name: "Rajesh M.",
+  //     role: "Entrepreneur", 
+  //     content: "I was skeptical at first, but the consultation provided incredible insights into my relationship patterns and helped me make better decisions in my personal life.",
+  //     rating: 5,
+  //     category: "Relationship Insights"
+  //   },
+  //   {
+  //     name: "Ananya S.",
+  //     role: "Creative Professional",
+  //     content: "The annual forecast reading helped me plan my year strategically. Understanding the cosmic trends gave me confidence in timing major decisions.",
+  //     rating: 5,
+  //     category: "Life Planning"
+  //   }
+  // ];
 
   return (
     <section className="py-16 bg-gradient-to-br from-purple-50 to-indigo-50">
-      <Container>
+    {/*  <Container>
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-gray-900">Client Experiences</h2>
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">What People have to say</h2>
           <p className="text-xl text-gray-600">Insights that have made a meaningful difference</p>
         </div>
         
@@ -477,7 +591,7 @@ const TestimonialsSection = () => {
             </p>
           </div>
         </div>
-      </Container>
+      </Container> */}
     </section>
   );
 };
@@ -516,16 +630,17 @@ const BookingSection = () => {
                   </Button>
                   
                   <div className="text-sm text-gray-600">
-                    Choose from Birth Chart Analysis, Specific Questions, or Annual Forecast
+                    Choose from Birth Chart Analysis, 30 min Consultation, or Couples Reading
                   </div>
                 </div>
                 
                 <Separator className="my-6" />
                 
                 <div className="text-sm text-gray-600 space-y-2">
-                  <p><strong>Consultation Hours:</strong> 9 AM - 7 PM IST</p>
-                  <p><strong>Available:</strong> Monday to Saturday</p>
-                  <p><strong>Languages:</strong> English, Hindi</p>
+                  <p><strong>Consultation Hours:</strong> Weekdays: 7-9 PM | Weekends: 11 AM-7 PM IST</p>
+                  <p><strong>Availability:</strong> By prior appointment only</p>
+                  <p><strong>Languages:</strong> English, Hindi, Marathi</p>
+                  <p className="text-xs text-gray-500 italic">*Hours subject to change without prior notice</p>
                 </div>
               </CardContent>
             </Card>
@@ -546,7 +661,7 @@ const BookingSection = () => {
                       <div className="font-medium">Phone Consultation Available</div>
                       <div className="text-sm text-gray-600">+91 83697 90166</div>
                       <div className="text-xs text-gray-500 mt-1">
-                        Call for urgent questions or to discuss consultation options
+                        Call to discuss consultation options
                       </div>
                     </div>
                   </div>
@@ -571,9 +686,20 @@ const BookingSection = () => {
                     </ul>
                   </div>
                   
+                  <div className="mt-4 text-center">
+                    <Link 
+                      to="/terms" 
+                      className="text-sm text-purple-600 hover:text-purple-700 underline"
+                    >
+                      View Terms & Conditions and Privacy Policy
+                    </Link>
+                  </div>
+                  
                   <Button 
                     variant="outline" 
                     className="w-full border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
+                    onClick={() => window.open('https://wa.me/918369790166?text=I%20want%20to%20know%20more%20about%20Jyotish%20consultation', '_blank')}
+                    aria-label="Contact via WhatsApp for Jyotish consultation inquiries"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     WhatsApp Quick Query
@@ -622,8 +748,9 @@ const CallToActionSection = () => {
             </Button>
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-purple-900 px-8 py-3"
+              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-purple-900 transition-all duration-200 px-8 py-3"
+              onClick={() => window.open('https://wa.me/918369790166?text=I%20would%20like%20to%20speak%20with%20you%20about%20Jyotish%20consultation', '_blank')}
+              aria-label="Contact Mihir Chavan via WhatsApp for Jyotish consultation"
             >
               <Phone className="w-5 h-5 mr-2" />
               Speak with Mihir
@@ -633,6 +760,15 @@ const CallToActionSection = () => {
           <div className="text-purple-200 text-sm">
             Consultations available in English and Hindi • Privacy guaranteed • No question too small
           </div>
+          
+          <div className="mt-4 text-center">
+            <Link 
+              to="/terms" 
+              className="text-sm text-purple-300 hover:text-white underline"
+            >
+              Terms & Conditions • Privacy Policy
+            </Link>
+          </div>
         </div>
       </Container>
     </section>
@@ -641,8 +777,111 @@ const CallToActionSection = () => {
 
 // Main Jyotish Portal Component
 const JyotishPortal = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://mihirchavan.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Jyotish Consultation",
+            "item": "https://mihirchavan.in/jyotish"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+    "name": "Jyotish Consultation",
+    "description": "Professional Vedic astrology consultations with Astromani graduate Mihir Chavan",
+    "serviceType": "Astrology Reading",
+    "provider": {
+      "@type": "Person",
+      "name": "Mihir Chavan",
+      "jobTitle": "Jyotish Astrologer",
+      "description": "Astromani graduate practicing Vedic astrology",
+      "url": "https://mihirchavan.in"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Jyotish Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Complete Birth Chart Analysis",
+            "description": "60-minute comprehensive birth chart reading"
+          },
+          "price": "2500",
+          "priceCurrency": "INR"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "30 min Consultation",
+            "description": "30-minute focused consultation"
+          },
+          "price": "1500",
+          "priceCurrency": "INR"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service", 
+            "name": "60 min Consultation for 2 People",
+            "description": "60-minute joint consultation for couples"
+          },
+          "price": "3000",
+          "priceCurrency": "INR"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service", 
+            "name": "Kundali Preparation",
+            "description": "Complete birth chart preparation in PDF format"
+          },
+          "price": "500",
+          "priceCurrency": "INR"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service", 
+            "name": "Kundali Preparation and Years Prediction",
+            "description": "Complete birth chart with detailed yearly predictions"
+          },
+          "price": "1000",
+          "priceCurrency": "INR"
+        }
+      ]
+    }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead 
+        title="Jyotish Consultation | Vedic Astrology Reading by Mihir Chavan"
+        description="Professional Jyotish (Vedic astrology) consultations with Astromani graduate Mihir Chavan. Birth chart analysis, annual forecasts, and spiritual guidance for clarity and direction."
+        keywords="Jyotish consultation, Vedic astrology, birth chart reading, astrology Mumbai, Mihir Chavan astrologer, Astromani graduate, spiritual guidance"
+        ogImage="https://mihirchavan.in/og-image.jpg"
+        structuredData={structuredData}
+      />
       <HeroSection />
       <AstrologerIntroduction />
       <ServicesShowcase />

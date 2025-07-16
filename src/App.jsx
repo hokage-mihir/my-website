@@ -9,6 +9,8 @@ import AboutPage from './pages/AboutPage';
 import PassionProjectsPage from './pages/PassionProjectsPage';
 import ContactPage from './pages/ContactPage';
 import TermsConditionsPage from './pages/TermsConditionsPage';
+import JyotishPortal from './pages/JyotishPortal';
+import ArtOfLivingPortal from './pages/ArtOfLivingPortal';
 
 function App() {
   // Initialize Cal.com
@@ -34,6 +36,8 @@ function App() {
           <Route path="projects" element={<PassionProjectsPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="terms" element={<TermsConditionsPage />} />
+          <Route path="jyotish" element={<JyotishPortal />} />
+          <Route path="aol" element={<ArtOfLivingPortal />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, Users, Heart, Brain, Flower2, Star, ChevronDown, ChevronRight, ExternalLink, Play, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Calendar, Clock, Users, Heart, Brain, Flower2, Star, ChevronDown, ChevronRight, ExternalLink, MapPin, Home, ChevronRight as BreadcrumbChevron, Phone } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Separator } from "@/components/ui/separator";
+import SEOHead from '../components/SEOHead';
+import OptimizedImage from '@/components/ui/optimized-image';
 
 // Hero Section Component
 const HeroSection = () => {
@@ -20,6 +23,23 @@ const HeroSection = () => {
       
       <Container className="relative h-full flex items-center">
         <div className="max-w-3xl">
+          {/* Breadcrumb Navigation */}
+          <nav className="flex items-center text-sm sm:text-base mb-6" aria-label="Breadcrumb">
+            <div className="flex items-center">
+              <Link 
+                to="/" 
+                className="flex items-center text-blue-200/80 hover:text-white transition-colors duration-200 group"
+                aria-label="Return to Mihir Chavan's main website"
+              >
+                <Home className="h-4 w-4 mr-1 group-hover:scale-110 transition-transform" />
+                <span className="hidden sm:inline">Mihir Chavan</span>
+                <span className="sm:hidden">Home</span>
+              </Link>
+              <BreadcrumbChevron className="h-4 w-4 mx-2 text-blue-300/60" />
+              <span className="text-yellow-300 font-medium">Art of Living</span>
+            </div>
+          </nav>
+          
           <div className="flex items-center mb-4">
             <Flower2 className="h-8 w-8 mr-3 text-yellow-300" />
             <span className="text-yellow-300 font-medium">Art of Living Programs</span>
@@ -39,19 +59,19 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-semibold px-8 py-3"
-              data-cal-link="hokagemihir/aol-programs"
+              onClick={() => window.open('https://aolt.in/894652', '_blank')}
             >
-              <Calendar className="w-5 h-5 mr-2" />
+              <ExternalLink className="w-5 h-5 mr-2" />
               View Upcoming Programs
             </Button>
-            <Button 
+            {/* <Button 
               size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3"
+              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-blue-600 transition-all duration-200 px-8 py-3"
+              onClick={() => window.open('VIDEO_URL_HERE', '_blank')}
             >
               <Play className="w-5 h-5 mr-2" />
               Watch Introduction
-            </Button>
+            </Button> */}
           </div>
         </div>
       </Container>
@@ -67,8 +87,14 @@ const TeacherIntroduction = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/3">
             <div className="relative w-64 h-64 mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-6xl text-blue-700 font-semibold">M</span>
+              <div className="absolute inset-0 rounded-full overflow-hidden shadow-xl">
+                <OptimizedImage 
+                  src="/profile.png" 
+                  alt="Mihir Chavan - Certified Art of Living Teacher and Program Facilitator" 
+                  className="w-full h-full object-cover"
+                  width="256"
+                  height="256"
+                />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-yellow-500 rounded-full p-3 shadow-lg">
                 <Flower2 className="h-6 w-6 text-white" />
@@ -118,30 +144,33 @@ const ProgramsShowcase = () => {
   const programs = [
     {
       title: "Happiness Program",
-      duration: "6 consecutive days",
+      duration: "3-6 days, 2-3 hours per day",
       description: "Learn powerful breathing techniques, gain practical wisdom, and experience guided meditations.",
       benefits: ["Stress elimination", "Better sleep", "Improved focus", "Enhanced relationships"],
-      level: "Beginner friendly",
+      level: "Ages 18+",
       icon: Heart,
-      color: "from-pink-500 to-rose-500"
+      color: "from-pink-500 to-rose-500",
+      registrationLink: "https://aolt.in/894652"
     },
     {
-      title: "Breath & Meditation Workshop",
-      duration: "1 day intensive",
+      title: "Online Meditation & Breath Workshop",
+      duration: "4 days, 2 hours per day",
       description: "Introduction to Sudarshan Kriya and basic meditation techniques for daily practice.",
       benefits: ["Energy boost", "Mental clarity", "Emotional balance", "Inner peace"],
-      level: "All levels",
+      level: "Ages 18+",
       icon: Brain,
-      color: "from-blue-500 to-indigo-500"
+      color: "from-blue-500 to-indigo-500",
+      comingSoon: true
     },
     {
       title: "Youth Programs",
-      duration: "2-3 days",
+      duration: "3-6 days, 2-3 hours per day",
       description: "Specially designed for young adults to handle academic pressure and life challenges.",
       benefits: ["Confidence building", "Stress management", "Better relationships", "Goal clarity"],
       level: "Ages 18-35",
       icon: Users,
-      color: "from-green-500 to-teal-500"
+      color: "from-green-500 to-teal-500",
+      comingSoon: true
     }
   ];
 
@@ -186,9 +215,45 @@ const ProgramsShowcase = () => {
                     </ul>
                   </div>
                   
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                    Learn More & Register
-                  </Button>
+                  <div className="space-y-2">
+                    {program.comingSoon ? (
+                      <>
+                        <Button 
+                          className="w-full bg-gray-400 cursor-not-allowed"
+                          disabled
+                        >
+                          <Clock className="w-4 h-4 mr-2" />
+                          Coming Soon
+                        </Button>
+                        <Button 
+                          variant="outline" 
+                          className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                          onClick={() => window.open(`https://wa.me/918369790166?text=I%20want%20to%20know%20more%20about%20the%20${program.title}%20and%20when%20it%20will%20be%20available`, '_blank')}
+                        >
+                          <Phone className="w-4 h-4 mr-2" />
+                          Get Notified
+                        </Button>
+                      </>
+                    ) : (
+                      <>
+                        <Button 
+                          className="w-full bg-blue-600 hover:bg-blue-700"
+                          onClick={() => window.open(program.registrationLink, '_blank')}
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Register Now
+                        </Button>
+                        <Button 
+                          variant="outline" 
+                          className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                          onClick={() => window.open(`https://wa.me/918369790166?text=I%20want%20to%20know%20more%20about%20the%20${program.title}`, '_blank')}
+                        >
+                          <Phone className="w-4 h-4 mr-2" />
+                          WhatsApp for Details
+                        </Button>
+                      </>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             );
@@ -318,27 +383,12 @@ const UpcomingSchedule = () => {
   const upcomingPrograms = [
     {
       title: "Happiness Program",
-      dates: "May 23-25, 2024",
+      dates: "24th to 27th July, 2025",
       time: "7:00 PM - 9:30 PM",
-      location: "Mumbai, Bandra West",
+      location: "Mulund, Mumbai",
       type: "In-person",
-      spotsLeft: 20
-    },
-    {
-      title: "Breath & Meditation Workshop", 
-      dates: "June 2, 2024",
-      time: "10:00 AM - 6:00 PM",
-      location: "Online via Zoom",
-      type: "Virtual",
-      spotsLeft: 24
-    },
-    {
-      title: "Youth Program",
-      dates: "June 15-17, 2024", 
-      time: "6:30 PM - 9:00 PM",
-      location: "Mumbai, Powai",
-      type: "In-person",
-      spotsLeft: 20
+      spotsLeft: 18,
+      registrationLink: "https://aolt.in/894652"
     }
   ];
 
@@ -390,7 +440,7 @@ const UpcomingSchedule = () => {
                     </div>
                     <Button 
                       className="bg-blue-600 hover:bg-blue-700"
-                      data-cal-link="hokagemihir/aol-programs"
+                      onClick={() => window.open(program.registrationLink || 'https://aolt.in/894652', '_blank')}
                     >
                       Register Now
                     </Button>
@@ -405,9 +455,10 @@ const UpcomingSchedule = () => {
           <Button 
             variant="outline" 
             size="lg"
-            data-cal-link="hokagemihir/aol-programs"
+            onClick={() => window.open('https://aolt.in/894652', '_blank')}
           >
-            View Full Calendar
+            <ExternalLink className="w-4 h-4 mr-2" />
+            View Registration Page
           </Button>
         </div>
       </Container>
@@ -417,27 +468,6 @@ const UpcomingSchedule = () => {
 
 // Testimonials Component
 const TestimonialsSection = () => {
-  const testimonials = [
-    {
-      name: "Priya S.",
-      role: "Software Engineer",
-      content: "The Happiness Program completely transformed how I handle work stress. The breathing techniques have become my daily anchor.",
-      rating: 5
-    },
-    {
-      name: "Raj M.",
-      role: "College Student", 
-      content: "As a student, I was struggling with anxiety. These techniques gave me the tools to stay calm during exams and feel more confident.",
-      rating: 5
-    },
-    {
-      name: "Anita K.",
-      role: "Working Mother",
-      content: "Balancing work and family was overwhelming. The program helped me find inner peace and be more present with my children.",
-      rating: 5
-    }
-  ];
-
   return (
     <section className="py-16 bg-blue-50">
       <Container>
@@ -572,15 +602,15 @@ const CallToActionSection = () => {
             <Button 
               size="lg" 
               className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-semibold px-8 py-3"
-              data-cal-link="hokagemihir/aol-programs"
+              onClick={() => window.open('https://aolt.in/894652', '_blank')}
             >
-              <Calendar className="w-5 h-5 mr-2" />
+              <ExternalLink className="w-5 h-5 mr-2" />
               Register for Next Program
             </Button>
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3"
+              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-blue-600 transition-all duration-200 px-8 py-3"
+              onClick={() => window.open('https://artofliving.org', '_blank')}
             >
               <ExternalLink className="w-5 h-5 mr-2" />
               Learn More About Art of Living
@@ -589,6 +619,10 @@ const CallToActionSection = () => {
           
           <div className="mt-8 text-blue-200 text-sm">
             Questions? Contact me directly at contact@mihirchavan.in or call +91 83697 90166
+          </div>
+          
+          <div className="mt-4 text-blue-200 text-sm">
+            Programs conducted in English, Hindi and Marathi • Located in Mulund, Mumbai
           </div>
         </div>
       </Container>
@@ -600,6 +634,12 @@ const CallToActionSection = () => {
 const ArtOfLivingPortal = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead 
+        title="Art of Living Programs | Happiness & Breathing Workshops by Mihir Chavan | Mulund, Mumbai"
+        description="Join certified Art of Living programs with Mihir Chavan in Mulund, Mumbai. Experience powerful breathing techniques, meditation, and stress elimination through proven wellness practices. Programs available in English and Hindi."
+        keywords="Art of Living, Happiness Program, breathing techniques, meditation, stress relief, wellness workshop, Mihir Chavan, AOL programs, Mulund Mumbai, English Hindi programs"
+        ogImage="https://mihirchavan.in/og-image.jpg"
+      />
       <HeroSection />
       <TeacherIntroduction />
       <ProgramsShowcase />
