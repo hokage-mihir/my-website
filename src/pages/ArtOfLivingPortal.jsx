@@ -11,7 +11,7 @@ import OptimizedImage from '@/components/ui/optimized-image';
 // Hero Section Component
 const HeroSection = () => {
   return (
-    <section className="relative h-[500px] bg-gradient-to-r from-blue-600/90 to-blue-400/90 text-white overflow-hidden">
+    <section className="relative min-h-[100vh] sm:min-h-[80vh] md:min-h-[70vh] lg:h-[500px] bg-gradient-to-r from-blue-600/90 to-blue-400/90 text-white overflow-hidden">
       <div className="absolute inset-0">
         <img 
           src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80" 
@@ -21,8 +21,8 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/40 to-blue-400/40" />
       </div>
       
-      <Container className="relative h-full flex items-center">
-        <div className="max-w-3xl">
+      <Container className="relative h-full flex items-center justify-center py-8 sm:py-12 md:py-16">
+        <div className="max-w-3xl px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center text-sm sm:text-base mb-6" aria-label="Breadcrumb">
             <div className="flex items-center">
@@ -45,12 +45,12 @@ const HeroSection = () => {
             <span className="text-yellow-300 font-medium">Art of Living Programs</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Transform Your Life with 
             <span className="text-yellow-300"> Ancient Wisdom</span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">
             Join millions worldwide who have discovered inner peace, improved health, 
             and deeper happiness through proven breathing techniques and meditation.
           </p>

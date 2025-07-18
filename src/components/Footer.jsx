@@ -3,6 +3,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Linkedin, Heart, Home, User, Lightbulb, Mail, Flower2, FileText, Star } from 'lucide-react';
 
+const ScrollToTopLink = ({ to, children, className }) => {
+  const handleClick = () => {
+    // Scroll to top when navigating
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <Link to={to} onClick={handleClick} className={className}>
+      {children}
+    </Link>
+  );
+};
+
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
@@ -13,40 +26,40 @@ const Footer = () => {
             <h3 className="text-lg md:text-xl font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                <ScrollToTopLink to="/" className="flex items-center text-gray-300 hover:text-white transition-colors">
                   <Home className="h-4 w-4 mr-2" />
                   Home
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link to="/about" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                <ScrollToTopLink to="/about" className="flex items-center text-gray-300 hover:text-white transition-colors">
                   <User className="h-4 w-4 mr-2" />
                   About Me
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link to="/jyotish" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                <ScrollToTopLink to="/jyotish" className="flex items-center text-gray-300 hover:text-white transition-colors">
                   <Star className="h-4 w-4 mr-2" />
                   Jyotish
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link to="/aol" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                <ScrollToTopLink to="/aol" className="flex items-center text-gray-300 hover:text-white transition-colors">
                   <Flower2 className="h-4 w-4 mr-2" />
                   Art of Living
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link to="/projects" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                <ScrollToTopLink to="/projects" className="flex items-center text-gray-300 hover:text-white transition-colors">
                   <Lightbulb className="h-4 w-4 mr-2" />
                   Passion Projects
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-              <Link to="/contact" className="flex items-center text-gray-300 hover:text-white transition-colors">
+              <ScrollToTopLink to="/contact" className="flex items-center text-gray-300 hover:text-white transition-colors">
                 <Mail className="h-4 w-4 mr-2" />
                   Contact
-                </Link>
+                </ScrollToTopLink>
               </li>
             </ul>
           </div>
@@ -99,10 +112,10 @@ const Footer = () => {
             <h3 className="text-lg md:text-xl font-semibold mb-4">Legal</h3>
             <ul className="space-y-2 mb-4">
               <li>
-                <Link to="/terms" className="flex items-center text-gray-300 hover:text-white transition-colors">
+                <ScrollToTopLink to="/terms" className="flex items-center text-gray-300 hover:text-white transition-colors">
                   <FileText className="h-4 w-4 mr-2" />
                   Terms & Privacy
-                </Link>
+                </ScrollToTopLink>
               </li>
             </ul>
             <p className="text-sm text-gray-400 mb-1">© {new Date().getFullYear()} Mihir Chavan.</p>

@@ -18,7 +18,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-[400px] md:h-[500px] bg-gradient-to-r from-purple-900/95 to-indigo-900/95 text-white overflow-hidden">
+    <section className="relative min-h-[100vh] sm:min-h-[80vh] md:min-h-[70vh] lg:h-[500px] bg-gradient-to-r from-purple-900/95 to-indigo-900/95 text-white overflow-hidden">
       <div className="absolute inset-0">
         <OptimizedImage 
           src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?auto=format&fit=crop&w=2000&q=80" 
@@ -38,8 +38,8 @@ const HeroSection = () => {
         </div>
       </div>
       
-      <Container className="relative h-full flex items-center">
-        <div className="max-w-3xl">
+      <Container className="relative h-full flex items-center justify-center py-8 sm:py-12 md:py-16">
+        <div className="max-w-3xl px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center text-sm sm:text-base mb-6" aria-label="Breadcrumb">
             <div className="flex items-center">
@@ -62,12 +62,12 @@ const HeroSection = () => {
             <span className="text-yellow-400 font-medium tracking-wide">Professional Vedic Astrology</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Ancient Wisdom for 
             <span className="text-yellow-400"> Modern Life</span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-purple-100 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 text-purple-100 leading-relaxed">
             Discover clarity, purpose, and direction through the profound science of Vedic astrology. 
             Let the cosmic patterns illuminate your path forward.
           </p>
