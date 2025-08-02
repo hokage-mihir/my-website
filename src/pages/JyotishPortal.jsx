@@ -17,6 +17,13 @@ const HeroSection = () => {
     }
   };
 
+  const handleBookConsultation = () => {
+    const servicesSection = document.getElementById('services-section');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-[100vh] sm:min-h-[80vh] md:min-h-[70vh] lg:h-[500px] bg-gradient-to-r from-purple-900/95 to-indigo-900/95 text-white overflow-hidden">
       <div className="absolute inset-0">
@@ -76,8 +83,8 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-yellow-600 hover:bg-yellow-700 text-purple-900 font-semibold px-8 py-3"
-              data-cal-link="hokagemihir/jyotish"
-              aria-label="Book Jyotish consultation appointment with Mihir Chavan"
+              onClick={handleBookConsultation}
+              aria-label="Scroll to consultation services section"
             >
               <Calendar className="w-5 h-5 mr-2" />
               Book Consultation
@@ -238,7 +245,7 @@ const ServicesShowcase = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section id="services-section" className="py-16 bg-white">
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-gray-900">Consultation Services</h2>
@@ -617,11 +624,15 @@ const TestimonialsSection = () => {
 
 // Booking Section
 const BookingSection = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleScheduleConsultation = () => {
+    const servicesSection = document.getElementById('services-section');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <>
-      <section className="py-16 bg-white">
+    <section className="py-16 bg-white">
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-gray-900">Ready to Explore Your Cosmic Blueprint?</h2>
@@ -645,7 +656,7 @@ const BookingSection = () => {
                   <div className="space-y-4 mb-6">
                     <Button 
                       className="w-full bg-purple-600 hover:bg-purple-700 text-lg py-3"
-                      onClick={() => setIsModalOpen(true)}
+                      onClick={handleScheduleConsultation}
                     >
                       <Calendar className="w-5 h-5 mr-2" />
                       Choose & Schedule Consultation
@@ -732,126 +743,22 @@ const BookingSection = () => {
           </div>
         </div>
       </Container>
-      </section>
-
-      {/* Booking Modal */}
-      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </>
+    </section>
   );
 };
 
-// Booking Modal Component
-const BookingModal = ({ isOpen, onClose }) => {
-  const services = [
-    {
-      title: "Complete Birth Chart Analysis",
-      duration: "60 minutes",
-      price: "₹2,500",
-      description: "Comprehensive reading covering personality, career, relationships, health, and spiritual path.",
-      namespace: "complete-birth-chart-analysis",
-      calLink: "hokagemihir/complete-birth-chart-analysis",
-      popular: true
-    },
-    {
-      title: "30 min Consultation",
-      duration: "30 minutes", 
-      price: "₹1,500",
-      description: "Focused guidance on specific life areas - career, relationships, or timing decisions.",
-      namespace: "30min",
-      calLink: "hokagemihir/30min",
-      popular: false
-    },
-    {
-      title: "60 min Consultation for 2 People",
-      duration: "60 minutes",
-      price: "₹3,000", 
-      description: "Joint session for couples or family members with compatibility insights.",
-      namespace: "2people",
-      calLink: "hokagemihir/2people",
-      popular: false
-    }
-  ];
-
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        {/* Modal Header */}
-        <div className="flex justify-between items-center p-6 border-b border-gray-200">
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900">Choose Your Consultation</h2>
-            <p className="text-gray-600 mt-1">Select the reading that best fits your needs</p>
-          </div>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
-            aria-label="Close modal"
-          >
-            <X className="h-6 w-6" />
-          </button>
-        </div>
-
-        {/* Services Grid */}
-        <div className="p-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <div 
-                key={index} 
-                className={`relative border rounded-lg p-6 hover:shadow-lg transition-shadow ${
-                  service.popular ? 'border-2 border-yellow-400 shadow-md' : 'border-gray-200'
-                }`}
-              >
-                {service.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                
-                <div className="text-center mb-4">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{service.title}</h3>
-                  <div className="text-sm text-purple-700 font-medium mb-2">{service.duration}</div>
-                  <div className="text-2xl font-bold text-gray-900 mb-3">{service.price}</div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-                </div>
-                
-                <Button
-                  className={`w-full ${
-                    service.popular 
-                      ? 'bg-yellow-600 hover:bg-yellow-700' 
-                      : 'bg-purple-600 hover:bg-purple-700'
-                  }`}
-                  data-cal-namespace={service.namespace}
-                  data-cal-link={service.calLink}
-                  data-cal-config='{"layout":"month_view"}'
-                  onClick={onClose}
-                >
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Book This Reading
-                </Button>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-6 text-center text-sm text-gray-600">
-            <p className="mb-2">📞 Need help choosing? Call +91 83697 90166</p>
-            <p>All consultations include personalized insights • No recordings provided</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 // Call to Action Component
 const CallToActionSection = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleBookReading = () => {
+    const servicesSection = document.getElementById('services-section');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <>
-      <section className="py-16 bg-gradient-to-r from-purple-900 to-indigo-900 text-white relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-r from-purple-900 to-indigo-900 text-white relative overflow-hidden">
         {/* Cosmic background elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
@@ -875,7 +782,7 @@ const CallToActionSection = () => {
               <Button 
                 size="lg" 
                 className="bg-yellow-600 hover:bg-yellow-700 text-purple-900 font-semibold px-8 py-3"
-                onClick={() => setIsModalOpen(true)}
+                onClick={handleBookReading}
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Your Reading Today
@@ -906,10 +813,6 @@ const CallToActionSection = () => {
           </div>
         </Container>
       </section>
-
-      {/* Booking Modal */}
-      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </>
   );
 };
 
