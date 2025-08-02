@@ -350,11 +350,17 @@ const ServicesShowcase = () => {
                   <Button 
                     variant="outline" 
                     className="w-full border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
-                    data-tally-open={service.title === "Kundali Preparation" ? "kundali-form" : "year-report-form"}
+                    // Tally.so form integration for service requests
+                    data-tally-open={
+                      service.title === "Kundali Preparation" ? "3yaZDB" : 
+                      service.title === "Kundali Preparation and Years Prediction" ? "3yaZq4" : 
+                      "year-report-form"
+                    }
                     data-tally-layout="modal"
                     data-tally-width="600"
                     data-tally-emoji-text="🌟"
                     data-tally-emoji-animation="wave"
+                    aria-label={`Request ${service.title} service via form`}
                   >
                     Request Service
                   </Button>
@@ -611,52 +617,55 @@ const TestimonialsSection = () => {
 
 // Booking Section
 const BookingSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <section className="py-16 bg-white">
-      <Container>
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-gray-900">Ready to Explore Your Cosmic Blueprint?</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Take the first step toward greater clarity and understanding. Book your consultation 
-            and discover what the stars reveal about your unique path.
-          </p>
-        </div>
-        
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Booking Calendar */}
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-2xl text-center">Book Your Consultation</CardTitle>
-                <CardDescription className="text-center">
-                  Select your preferred consultation type and time
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="space-y-4 mb-6">
-                  <Button 
-                    className="w-full bg-purple-600 hover:bg-purple-700 text-lg py-3"
-                    data-cal-link="hokagemihir/jyotish"
-                  >
-                    <Calendar className="w-5 h-5 mr-2" />
-                    Schedule Consultation
-                  </Button>
-                  
-                  <div className="text-sm text-gray-600">
-                    Choose from Birth Chart Analysis, 30 min Consultation, or Couples Reading
+    <>
+      <section className="py-16 bg-white">
+        <Container>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">Ready to Explore Your Cosmic Blueprint?</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Take the first step toward greater clarity and understanding. Book your consultation 
+              and discover what the stars reveal about your unique path.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Booking Calendar */}
+              <Card className="shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-2xl text-center">Book Your Consultation</CardTitle>
+                  <CardDescription className="text-center">
+                    Select your preferred consultation type and time
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <div className="space-y-4 mb-6">
+                    <Button 
+                      className="w-full bg-purple-600 hover:bg-purple-700 text-lg py-3"
+                      onClick={() => setIsModalOpen(true)}
+                    >
+                      <Calendar className="w-5 h-5 mr-2" />
+                      Choose & Schedule Consultation
+                    </Button>
+                    
+                    <div className="text-sm text-gray-600">
+                      Choose from Birth Chart Analysis, 30 min Consultation, or Couples Reading
+                    </div>
                   </div>
-                </div>
-                
-                <Separator className="my-6" />
-                
-                <div className="text-sm text-gray-600 space-y-2">
-                  <p><strong>Consultation Hours:</strong> Weekdays: 7-9 PM | Weekends: 11 AM-7 PM IST</p>
-                  <p><strong>Availability:</strong> By prior appointment only</p>
-                  <p><strong>Languages:</strong> English, Hindi, Marathi</p>
-                  <p className="text-xs text-gray-500 italic">*Hours subject to change without prior notice</p>
-                </div>
-              </CardContent>
-            </Card>
+                  
+                  <Separator className="my-6" />
+                  
+                  <div className="text-sm text-gray-600 space-y-2">
+                    <p><strong>Consultation Hours:</strong> Weekdays: 7-9 PM | Weekends: 11 AM-7 PM IST</p>
+                    <p><strong>Availability:</strong> By prior appointment only</p>
+                    <p><strong>Languages:</strong> English, Hindi, Marathi</p>
+                    <p className="text-xs text-gray-500 italic">*Hours subject to change without prior notice</p>
+                  </div>
+                </CardContent>
+              </Card>
             
             {/* Contact Information */}
             <Card className="shadow-lg">
@@ -723,68 +732,184 @@ const BookingSection = () => {
           </div>
         </div>
       </Container>
-    </section>
+      </section>
+
+      {/* Booking Modal */}
+      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
+  );
+};
+
+// Booking Modal Component
+const BookingModal = ({ isOpen, onClose }) => {
+  const services = [
+    {
+      title: "Complete Birth Chart Analysis",
+      duration: "60 minutes",
+      price: "₹2,500",
+      description: "Comprehensive reading covering personality, career, relationships, health, and spiritual path.",
+      namespace: "complete-birth-chart-analysis",
+      calLink: "hokagemihir/complete-birth-chart-analysis",
+      popular: true
+    },
+    {
+      title: "30 min Consultation",
+      duration: "30 minutes", 
+      price: "₹1,500",
+      description: "Focused guidance on specific life areas - career, relationships, or timing decisions.",
+      namespace: "30min",
+      calLink: "hokagemihir/30min",
+      popular: false
+    },
+    {
+      title: "60 min Consultation for 2 People",
+      duration: "60 minutes",
+      price: "₹3,000", 
+      description: "Joint session for couples or family members with compatibility insights.",
+      namespace: "2people",
+      calLink: "hokagemihir/2people",
+      popular: false
+    }
+  ];
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+      <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        {/* Modal Header */}
+        <div className="flex justify-between items-center p-6 border-b border-gray-200">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">Choose Your Consultation</h2>
+            <p className="text-gray-600 mt-1">Select the reading that best fits your needs</p>
+          </div>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-600 transition-colors"
+            aria-label="Close modal"
+          >
+            <X className="h-6 w-6" />
+          </button>
+        </div>
+
+        {/* Services Grid */}
+        <div className="p-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <div 
+                key={index} 
+                className={`relative border rounded-lg p-6 hover:shadow-lg transition-shadow ${
+                  service.popular ? 'border-2 border-yellow-400 shadow-md' : 'border-gray-200'
+                }`}
+              >
+                {service.popular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                
+                <div className="text-center mb-4">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{service.title}</h3>
+                  <div className="text-sm text-purple-700 font-medium mb-2">{service.duration}</div>
+                  <div className="text-2xl font-bold text-gray-900 mb-3">{service.price}</div>
+                  <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                </div>
+                
+                <Button
+                  className={`w-full ${
+                    service.popular 
+                      ? 'bg-yellow-600 hover:bg-yellow-700' 
+                      : 'bg-purple-600 hover:bg-purple-700'
+                  }`}
+                  data-cal-namespace={service.namespace}
+                  data-cal-link={service.calLink}
+                  data-cal-config='{"layout":"month_view"}'
+                  onClick={onClose}
+                >
+                  <Calendar className="w-4 h-4 mr-2" />
+                  Book This Reading
+                </Button>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-6 text-center text-sm text-gray-600">
+            <p className="mb-2">📞 Need help choosing? Call +91 83697 90166</p>
+            <p>All consultations include personalized insights • No recordings provided</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
 // Call to Action Component
 const CallToActionSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <section className="py-16 bg-gradient-to-r from-purple-900 to-indigo-900 text-white relative overflow-hidden">
-      {/* Cosmic background elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-        <div className="absolute top-20 right-20 w-1 h-1 bg-white rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 left-1/4 w-1 h-1 bg-yellow-400 rounded-full animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white rounded-full animate-pulse"></div>
-      </div>
-      
-      <Container className="relative">
-        <div className="text-center max-w-3xl mx-auto">
-          <Star className="h-12 w-12 text-yellow-400 mx-auto mb-6" />
-          
-          <h2 className="text-4xl font-bold mb-6">Begin Your Journey of Self-Discovery</h2>
-          <p className="text-xl mb-8 text-purple-100 leading-relaxed">
-            The cosmic patterns that shaped your birth continue to influence your life. 
-            Understand these influences and align with your highest potential through 
-            the ancient wisdom of Jyotish.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button 
-              size="lg" 
-              className="bg-yellow-600 hover:bg-yellow-700 text-purple-900 font-semibold px-8 py-3"
-              data-cal-link="hokagemihir/jyotish"
-            >
-              <Calendar className="w-5 h-5 mr-2" />
-              Book Your Reading Today
-            </Button>
-            <Button 
-              size="lg" 
-              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-purple-900 transition-all duration-200 px-8 py-3"
-              onClick={() => window.open('https://wa.me/918369790166?text=I%20would%20like%20to%20speak%20with%20you%20about%20Jyotish%20consultation', '_blank')}
-              aria-label="Contact Mihir Chavan via WhatsApp for Jyotish consultation"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Speak with Mihir
-            </Button>
-          </div>
-          
-          <div className="text-purple-200 text-sm">
-            Consultations available in English and Hindi • Privacy guaranteed • No question too small
-          </div>
-          
-          <div className="mt-4 text-center">
-            <Link 
-              to="/terms" 
-              className="text-sm text-purple-300 hover:text-white underline"
-            >
-              Terms & Conditions • Privacy Policy
-            </Link>
-          </div>
+    <>
+      <section className="py-16 bg-gradient-to-r from-purple-900 to-indigo-900 text-white relative overflow-hidden">
+        {/* Cosmic background elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+          <div className="absolute top-20 right-20 w-1 h-1 bg-white rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 left-1/4 w-1 h-1 bg-yellow-400 rounded-full animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white rounded-full animate-pulse"></div>
         </div>
-      </Container>
-    </section>
+        
+        <Container className="relative">
+          <div className="text-center max-w-3xl mx-auto">
+            <Star className="h-12 w-12 text-yellow-400 mx-auto mb-6" />
+            
+            <h2 className="text-4xl font-bold mb-6">Begin Your Journey of Self-Discovery</h2>
+            <p className="text-xl mb-8 text-purple-100 leading-relaxed">
+              The cosmic patterns that shaped your birth continue to influence your life. 
+              Understand these influences and align with your highest potential through 
+              the ancient wisdom of Jyotish.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button 
+                size="lg" 
+                className="bg-yellow-600 hover:bg-yellow-700 text-purple-900 font-semibold px-8 py-3"
+                onClick={() => setIsModalOpen(true)}
+              >
+                <Calendar className="w-5 h-5 mr-2" />
+                Book Your Reading Today
+              </Button>
+              <Button 
+                size="lg" 
+                className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-purple-900 transition-all duration-200 px-8 py-3"
+                onClick={() => window.open('https://wa.me/918369790166?text=I%20would%20like%20to%20speak%20with%20you%20about%20Jyotish%20consultation', '_blank')}
+                aria-label="Contact Mihir Chavan via WhatsApp for Jyotish consultation"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Speak with Mihir
+              </Button>
+            </div>
+            
+            <div className="text-purple-200 text-sm">
+              Consultations available in English and Hindi • Privacy guaranteed • No question too small
+            </div>
+            
+            <div className="mt-4 text-center">
+              <Link 
+                to="/terms" 
+                className="text-sm text-purple-300 hover:text-white underline"
+              >
+                Terms & Conditions • Privacy Policy
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Booking Modal */}
+      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 };
 
