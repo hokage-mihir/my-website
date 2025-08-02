@@ -50,7 +50,7 @@ const PassionProjectsPage = () => {
         title="Passion Projects | Mihir Chavan - Excel, Jyotish, Web Development Portfolio"
         description="Explore Mihir Chavan's passion projects including Excel automation, Jyotish consultations, web development portfolio, and digital solutions. Professional expertise in finance, astrology, and modern web technologies."
         keywords="Mihir Chavan projects, Excel automation services, Jyotish consultations, web development portfolio, website development, passion projects, professional services, digital solutions"
-        ogImage="https://mihirchavan.in/og-image.jpg"
+        ogImage="https://mihirchavan.in/og-image.svg"
       />
       <Container>
         <div className="text-center mb-12">

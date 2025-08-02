@@ -27,8 +27,9 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[100vh] sm:min-h-[80vh] md:min-h-[70vh] lg:h-[500px] bg-gradient-to-r from-purple-900/95 to-indigo-900/95 text-white overflow-hidden">
       <div className="absolute inset-0">
+        {/* Optimized local image - replaced external Unsplash CDN for better performance */}
         <OptimizedImage 
-          src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?auto=format&fit=crop&w=2000&q=80" 
+          src="/hero-stars.jpg" 
           alt="Starry night sky representing ancient Vedic wisdom and cosmic knowledge for Jyotish consultations" 
           className="w-full h-full object-cover opacity-40"
           width="2000"
@@ -920,7 +921,7 @@ const JyotishPortal = () => {
         title="Jyotish Consultation | Vedic Astrology Reading by Mihir Chavan"
         description="Professional Jyotish (Vedic astrology) consultations with Astroshiromani and Astromani graduate Mihir Chavan. Birth chart analysis, annual forecasts, and spiritual guidance for clarity and direction."
         keywords="Jyotish consultation, Vedic astrology, birth chart reading, astrology Mumbai, Mihir Chavan astrologer, Astroshiromani graduate, Astromani graduate, spiritual guidance"
-        ogImage="https://mihirchavan.in/og-image.jpg"
+        ogImage="https://mihirchavan.in/og-image.svg"
         structuredData={structuredData}
       />
       <HeroSection />

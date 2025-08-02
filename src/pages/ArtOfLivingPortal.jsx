@@ -14,10 +14,13 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[100vh] sm:min-h-[80vh] md:min-h-[70vh] lg:h-[500px] bg-gradient-to-r from-blue-600/90 to-blue-400/90 text-white overflow-hidden">
       <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80" 
+        {/* Optimized local image - replaced external Unsplash CDN for better performance */}
+        <OptimizedImage 
+          src="/hero-mountains-peace.jpg" 
           alt="Peaceful mountain landscape representing inner peace" 
           className="w-full h-full object-cover opacity-30"
+          width="1200"
+          height="800"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/40 to-blue-400/40" />
       </div>
@@ -883,7 +886,7 @@ const ArtOfLivingPortal = () => {
         title="Art of Living Programs | Happiness & Breathing Workshops by Mihir Chavan | Mulund, Mumbai"
         description="Join certified Art of Living programs with Mihir Chavan in Mulund, Mumbai. Experience powerful breathing techniques, meditation, and stress elimination through proven wellness practices. Programs available in English and Hindi."
         keywords="Art of Living, Happiness Program, breathing techniques, meditation, stress relief, wellness workshop, Mihir Chavan, AOL programs, Mulund Mumbai, English Hindi programs"
-        ogImage="https://mihirchavan.in/og-image.jpg"
+        ogImage="https://mihirchavan.in/og-image.svg"
       />
       <HeroSection />
       <TeacherIntroduction />

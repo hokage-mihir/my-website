@@ -92,7 +92,7 @@ const HomePage = () => {
         title="Mihir Chavan | Excel Expert, Jyotish Practitioner & Finance Professional"
         description="Mihir Chavan offers expertise in Microsoft Excel, Vedic astrology (Jyotish) consultations, and Marma healing. Finance professional with specialized skills to help transform your workflow and wellbeing."
         keywords="Mihir Chavan, Excel automation, Excel consultant, Jyotish, Vedic astrology, Marma healing, Finance professional, Mumbai"
-        ogImage="https://mihirchavan.in/og-image.jpg"
+        ogImage="https://mihirchavan.in/og-image.svg"
       />
       <Welcome />
       

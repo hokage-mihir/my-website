@@ -21,7 +21,7 @@ const Header = () => {
     <header className="relative h-[300px] md:h-[350px] lg:h-[400px] bg-gradient-to-r from-emerald-800/70 to-teal-800/70 text-white overflow-hidden">
       <div className="absolute inset-0">
         <OptimizedImage 
-          src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=2000&q=80" 
+          src="/hero-mountains-header.jpg" // Optimized local image for better performance 
           alt="Mihir Chavan personal website header - mountain landscape" 
           className="w-full h-full object-cover object-center opacity-95"
           loading="eager"
