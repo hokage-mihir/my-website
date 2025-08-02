@@ -116,7 +116,7 @@ const AstrologerIntroduction = () => {
               <div className="absolute inset-0 rounded-full overflow-hidden shadow-xl">
                 <OptimizedImage 
                   src="/profile.png" 
-                  alt="Mihir Chavan - Astro Shiromani and Astromani graduate, Professional Vedic Astrologer" 
+                  alt="Mihir Chavan - Astroshiromani and Astromani graduate, Professional Vedic Astrologer" 
                   className="w-full h-full object-cover"
                   width="256"
                   height="256"
@@ -136,7 +136,7 @@ const AstrologerIntroduction = () => {
             </h2>
             
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              As an Astro Shiromani (advanced certification) and Astromani graduate from the prestigious 
+              As an Astroshiromani (advanced certification) and Astromani graduate from the prestigious 
               Asttrolok institute under world-renowned astrologer Shri Alok Khandelwal, I bring deep 
               expertise in traditional Vedic wisdom combined with contemporary understanding to provide 
               meaningful insights into your life's journey.
@@ -156,7 +156,7 @@ const AstrologerIntroduction = () => {
               </div>
               <div className="flex items-center">
                 <Award className="h-5 w-5 text-yellow-600 mr-3" />
-                <span className="text-gray-700">Astromani Graduate - Asttrolok</span>
+                <span className="text-gray-700">Astroshiromani & Astromani Graduate - Asttrolok</span>
               </div>
               <div className="flex items-center">
                 <BookOpen className="h-5 w-5 text-purple-600 mr-3" />
@@ -841,13 +841,13 @@ const JyotishPortal = () => {
       {
         "@type": "Service",
     "name": "Jyotish Consultation",
-    "description": "Professional Vedic astrology consultations with Astromani graduate Mihir Chavan",
+    "description": "Professional Vedic astrology consultations with Astroshiromani and Astromani graduate Mihir Chavan",
     "serviceType": "Astrology Reading",
     "provider": {
       "@type": "Person",
       "name": "Mihir Chavan",
       "jobTitle": "Jyotish Astrologer",
-      "description": "Astromani graduate practicing Vedic astrology",
+      "description": "Astroshiromani and Astromani graduate practicing Vedic astrology",
       "url": "https://mihirchavan.in"
     },
     "areaServed": {
@@ -918,8 +918,8 @@ const JyotishPortal = () => {
     <div className="min-h-screen bg-white">
       <SEOHead 
         title="Jyotish Consultation | Vedic Astrology Reading by Mihir Chavan"
-        description="Professional Jyotish (Vedic astrology) consultations with Astromani graduate Mihir Chavan. Birth chart analysis, annual forecasts, and spiritual guidance for clarity and direction."
-        keywords="Jyotish consultation, Vedic astrology, birth chart reading, astrology Mumbai, Mihir Chavan astrologer, Astromani graduate, spiritual guidance"
+        description="Professional Jyotish (Vedic astrology) consultations with Astroshiromani and Astromani graduate Mihir Chavan. Birth chart analysis, annual forecasts, and spiritual guidance for clarity and direction."
+        keywords="Jyotish consultation, Vedic astrology, birth chart reading, astrology Mumbai, Mihir Chavan astrologer, Astroshiromani graduate, Astromani graduate, spiritual guidance"
         ogImage="https://mihirchavan.in/og-image.jpg"
         structuredData={structuredData}
       />

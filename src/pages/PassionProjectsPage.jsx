@@ -74,7 +74,7 @@ const PassionProjectsPage = () => {
                   Asttrolok institute.
                 </p>
                 <p>
-                  As an Astromani graduate and practicing astrologer, I combine traditional Vedic knowledge with contemporary insight 
+                  As an Astroshiromani and Astromani graduate and practicing astrologer, I combine traditional Vedic knowledge with contemporary insight 
                   to help individuals find clarity and direction. While I remain a lifelong student of this vast science, I'm privileged 
                   to offer guidance through personal consultations.
                 </p>

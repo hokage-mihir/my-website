@@ -1,0 +1,419 @@
+{
+  "lastUpdated": "2025-08-02T18:41:37.598Z",
+  "totalPrograms": 3,
+  "programs": {
+    "upcoming": [
+      {
+        "id": "TM83318",
+        "status": "Active",
+        "gkCode": "MH006",
+        "programType": "Happiness Program (3 Days)",
+        "subPrograms": "",
+        "registeredCount": 0,
+        "registrationUrl": "aolt.in/900847",
+        "teachers": [
+          {
+            "name": "Jyoti Vyas",
+            "code": "MH0818"
+          },
+          {
+            "name": "Beena Mamania",
+            "code": "MH1955"
+          },
+          {
+            "name": "Jyotsna Shah",
+            "code": "MH0802"
+          },
+          {
+            "name": "Asha Parwani",
+            "code": "MH1701"
+          },
+          {
+            "name": "Unmesh A. Masurkar",
+            "code": "MH0560"
+          },
+          {
+            "name": "Ramesh Desphande",
+            "code": "MH0262"
+          },
+          {
+            "name": "Gopal Iyer",
+            "code": "MH2179"
+          },
+          {
+            "name": "Kanchan Mukhi",
+            "code": "MH2488"
+          },
+          {
+            "name": "Usha R. Panchal",
+            "code": "MH2889"
+          },
+          {
+            "name": "Bhupen Mamania",
+            "code": "MH2974"
+          },
+          {
+            "name": "Anaya Pardeshi",
+            "code": "MH3180"
+          },
+          {
+            "name": "Mihir Chavan",
+            "code": "MH5688"
+          },
+          {
+            "name": "Daya Shinde",
+            "code": "MH3581"
+          },
+          {
+            "name": "Amey Khochare",
+            "code": "MH5689"
+          },
+          {
+            "name": "Niharika Luthia",
+            "code": "MH1681"
+          }
+        ],
+        "address": "D2, Parmeswari centre, Mulund West, Mumbai, Mumbai, Maharashtra 400080",
+        "city": "Mumbai",
+        "startDate": "15 Aug 2025",
+        "startTime": "3:00 PM",
+        "crfCount": 0,
+        "formattedDate": "15 August 2025"
+      },
+      {
+        "id": "TM50562",
+        "status": "Active",
+        "gkCode": "",
+        "programType": "Happiness Program for Youth-3 Days",
+        "subPrograms": "",
+        "registeredCount": 0,
+        "registrationUrl": "aolt.in/774811",
+        "teachers": [
+          {
+            "name": "Mihir Chavan",
+            "code": "MH5688"
+          },
+          {
+            "name": "Amey Khochare",
+            "code": "MH5689"
+          },
+          {
+            "name": "Sushmita Singh",
+            "code": "MH4707"
+          }
+        ],
+        "address": "C/303, Shiv Sagar Complex,, Bhandup West, Mumbai, Maharashtra, India, Mumbai, Mumbai, Maharashtra 400078",
+        "city": "Mumbai",
+        "startDate": "05 Sep 2025",
+        "startTime": "7:30 PM",
+        "crfCount": 0,
+        "formattedDate": "5 September 2025"
+      },
+      {
+        "id": "TM82902",
+        "status": "Active",
+        "gkCode": "MH006",
+        "programType": "Happiness Program",
+        "subPrograms": "",
+        "registeredCount": 0,
+        "registrationUrl": "aolt.in/899380",
+        "teachers": [
+          {
+            "name": "Anjana Gala",
+            "code": "MH0189"
+          },
+          {
+            "name": "Amey Khochare",
+            "code": "MH5689"
+          },
+          {
+            "name": "Mihir Chavan",
+            "code": "MH5688"
+          }
+        ],
+        "address": "D2, Parmeswari centre , Mulund West, Mumbai, Mumbai, Maharashtra 400080",
+        "city": "Mumbai",
+        "startDate": "18 Sep 2025",
+        "startTime": "7:00 PM",
+        "crfCount": 0,
+        "formattedDate": "18 September 2025"
+      }
+    ],
+    "byType": {
+      "Happiness Program (3 Days)": [
+        {
+          "id": "TM83318",
+          "status": "Active",
+          "gkCode": "MH006",
+          "programType": "Happiness Program (3 Days)",
+          "subPrograms": "",
+          "registeredCount": 0,
+          "registrationUrl": "aolt.in/900847",
+          "teachers": [
+            {
+              "name": "Jyoti Vyas",
+              "code": "MH0818"
+            },
+            {
+              "name": "Beena Mamania",
+              "code": "MH1955"
+            },
+            {
+              "name": "Jyotsna Shah",
+              "code": "MH0802"
+            },
+            {
+              "name": "Asha Parwani",
+              "code": "MH1701"
+            },
+            {
+              "name": "Unmesh A. Masurkar",
+              "code": "MH0560"
+            },
+            {
+              "name": "Ramesh Desphande",
+              "code": "MH0262"
+            },
+            {
+              "name": "Gopal Iyer",
+              "code": "MH2179"
+            },
+            {
+              "name": "Kanchan Mukhi",
+              "code": "MH2488"
+            },
+            {
+              "name": "Usha R. Panchal",
+              "code": "MH2889"
+            },
+            {
+              "name": "Bhupen Mamania",
+              "code": "MH2974"
+            },
+            {
+              "name": "Anaya Pardeshi",
+              "code": "MH3180"
+            },
+            {
+              "name": "Mihir Chavan",
+              "code": "MH5688"
+            },
+            {
+              "name": "Daya Shinde",
+              "code": "MH3581"
+            },
+            {
+              "name": "Amey Khochare",
+              "code": "MH5689"
+            },
+            {
+              "name": "Niharika Luthia",
+              "code": "MH1681"
+            }
+          ],
+          "address": "D2, Parmeswari centre, Mulund West, Mumbai, Mumbai, Maharashtra 400080",
+          "city": "Mumbai",
+          "startDate": "15 Aug 2025",
+          "startTime": "3:00 PM",
+          "crfCount": 0
+        }
+      ],
+      "Happiness Program": [
+        {
+          "id": "TM82902",
+          "status": "Active",
+          "gkCode": "MH006",
+          "programType": "Happiness Program",
+          "subPrograms": "",
+          "registeredCount": 0,
+          "registrationUrl": "aolt.in/899380",
+          "teachers": [
+            {
+              "name": "Anjana Gala",
+              "code": "MH0189"
+            },
+            {
+              "name": "Amey Khochare",
+              "code": "MH5689"
+            },
+            {
+              "name": "Mihir Chavan",
+              "code": "MH5688"
+            }
+          ],
+          "address": "D2, Parmeswari centre , Mulund West, Mumbai, Mumbai, Maharashtra 400080",
+          "city": "Mumbai",
+          "startDate": "18 Sep 2025",
+          "startTime": "7:00 PM",
+          "crfCount": 0
+        }
+      ],
+      "Happiness Program for Youth-3 Days": [
+        {
+          "id": "TM50562",
+          "status": "Active",
+          "gkCode": "",
+          "programType": "Happiness Program for Youth-3 Days",
+          "subPrograms": "",
+          "registeredCount": 0,
+          "registrationUrl": "aolt.in/774811",
+          "teachers": [
+            {
+              "name": "Mihir Chavan",
+              "code": "MH5688"
+            },
+            {
+              "name": "Amey Khochare",
+              "code": "MH5689"
+            },
+            {
+              "name": "Sushmita Singh",
+              "code": "MH4707"
+            }
+          ],
+          "address": "C/303, Shiv Sagar Complex,, Bhandup West, Mumbai, Maharashtra, India, Mumbai, Mumbai, Maharashtra 400078",
+          "city": "Mumbai",
+          "startDate": "05 Sep 2025",
+          "startTime": "7:30 PM",
+          "crfCount": 0
+        }
+      ]
+    },
+    "byCity": {
+      "Mumbai": [
+        {
+          "id": "TM83318",
+          "status": "Active",
+          "gkCode": "MH006",
+          "programType": "Happiness Program (3 Days)",
+          "subPrograms": "",
+          "registeredCount": 0,
+          "registrationUrl": "aolt.in/900847",
+          "teachers": [
+            {
+              "name": "Jyoti Vyas",
+              "code": "MH0818"
+            },
+            {
+              "name": "Beena Mamania",
+              "code": "MH1955"
+            },
+            {
+              "name": "Jyotsna Shah",
+              "code": "MH0802"
+            },
+            {
+              "name": "Asha Parwani",
+              "code": "MH1701"
+            },
+            {
+              "name": "Unmesh A. Masurkar",
+              "code": "MH0560"
+            },
+            {
+              "name": "Ramesh Desphande",
+              "code": "MH0262"
+            },
+            {
+              "name": "Gopal Iyer",
+              "code": "MH2179"
+            },
+            {
+              "name": "Kanchan Mukhi",
+              "code": "MH2488"
+            },
+            {
+              "name": "Usha R. Panchal",
+              "code": "MH2889"
+            },
+            {
+              "name": "Bhupen Mamania",
+              "code": "MH2974"
+            },
+            {
+              "name": "Anaya Pardeshi",
+              "code": "MH3180"
+            },
+            {
+              "name": "Mihir Chavan",
+              "code": "MH5688"
+            },
+            {
+              "name": "Daya Shinde",
+              "code": "MH3581"
+            },
+            {
+              "name": "Amey Khochare",
+              "code": "MH5689"
+            },
+            {
+              "name": "Niharika Luthia",
+              "code": "MH1681"
+            }
+          ],
+          "address": "D2, Parmeswari centre, Mulund West, Mumbai, Mumbai, Maharashtra 400080",
+          "city": "Mumbai",
+          "startDate": "15 Aug 2025",
+          "startTime": "3:00 PM",
+          "crfCount": 0
+        },
+        {
+          "id": "TM82902",
+          "status": "Active",
+          "gkCode": "MH006",
+          "programType": "Happiness Program",
+          "subPrograms": "",
+          "registeredCount": 0,
+          "registrationUrl": "aolt.in/899380",
+          "teachers": [
+            {
+              "name": "Anjana Gala",
+              "code": "MH0189"
+            },
+            {
+              "name": "Amey Khochare",
+              "code": "MH5689"
+            },
+            {
+              "name": "Mihir Chavan",
+              "code": "MH5688"
+            }
+          ],
+          "address": "D2, Parmeswari centre , Mulund West, Mumbai, Mumbai, Maharashtra 400080",
+          "city": "Mumbai",
+          "startDate": "18 Sep 2025",
+          "startTime": "7:00 PM",
+          "crfCount": 0
+        },
+        {
+          "id": "TM50562",
+          "status": "Active",
+          "gkCode": "",
+          "programType": "Happiness Program for Youth-3 Days",
+          "subPrograms": "",
+          "registeredCount": 0,
+          "registrationUrl": "aolt.in/774811",
+          "teachers": [
+            {
+              "name": "Mihir Chavan",
+              "code": "MH5688"
+            },
+            {
+              "name": "Amey Khochare",
+              "code": "MH5689"
+            },
+            {
+              "name": "Sushmita Singh",
+              "code": "MH4707"
+            }
+          ],
+          "address": "C/303, Shiv Sagar Complex,, Bhandup West, Mumbai, Maharashtra, India, Mumbai, Mumbai, Maharashtra 400078",
+          "city": "Mumbai",
+          "startDate": "05 Sep 2025",
+          "startTime": "7:30 PM",
+          "crfCount": 0
+        }
+      ]
+    }
+  }
+}

@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, Heart, Home, User, Lightbulb, Mail, Flower2, FileText, Star } from 'lucide-react';
+import { Instagram, Linkedin, Heart, Home, User, Lightbulb, Mail, Flower2, FileText, Star, Twitter } from 'lucide-react';
 
 const ScrollToTopLink = ({ to, children, className }) => {
   const handleClick = () => {
@@ -67,12 +67,14 @@ const Footer = () => {
           {/* Connect Section */}
           <div>
             <h3 className="text-lg md:text-xl font-semibold mb-4">Connect With Me</h3>
+            {/* Social Media Links with accessibility improvements */}
             <div className="flex space-x-4 mb-4">
               <a 
                 href="https://www.instagram.com/hokage.mihir/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-gray-800 p-2 rounded-full hover:bg-indigo-600 transition-colors"
+                aria-label="Follow on Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -81,8 +83,19 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-gray-800 p-2 rounded-full hover:bg-indigo-600 transition-colors"
+                aria-label="Connect on LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
+              </a>
+              {/* Added X.com (Twitter) link */}
+              <a 
+                href="https://x.com/HokageMihir" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-gray-800 p-2 rounded-full hover:bg-indigo-600 transition-colors"
+                aria-label="Follow on X (Twitter)"
+              >
+                <Twitter className="h-5 w-5" />
               </a>
             </div>
             <p className="text-sm text-gray-400">

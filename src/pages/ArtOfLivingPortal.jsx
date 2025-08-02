@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/container";
 import { Separator } from "@/components/ui/separator";
 import SEOHead from '../components/SEOHead';
 import OptimizedImage from '@/components/ui/optimized-image';
+import aolProgramsData from '../data/aol-programs.json';
 
 // Hero Section Component
 const HeroSection = () => {
@@ -59,9 +60,12 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-semibold px-8 py-3"
-              onClick={() => window.open('https://aolt.in/894652', '_blank')}
+              onClick={() => {
+                const upcomingSection = document.getElementById('upcoming-programs');
+                upcomingSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
-              <ExternalLink className="w-5 h-5 mr-2" />
+              <Calendar className="w-5 h-5 mr-2" />
               View Upcoming Programs
             </Button>
             {/* <Button 
@@ -139,8 +143,91 @@ const TeacherIntroduction = () => {
   );
 };
 
-// Programs Showcase Component
+// Programs Showcase Component - Links static program cards with dynamic Excel data
 const ProgramsShowcase = () => {
+  // Helper function to extract area and city from address using pincode as anchor point
+  const getAreaCity = (address, city) => {
+    if (!address) return city || '';
+    
+    // Extract area from address using pincode as anchor
+    const addressParts = address.split(',').map(part => part.trim()).filter(part => part.length > 0);
+    
+    // Find pincode (6 digits)
+    const pincodeIndex = addressParts.findIndex(part => /\b\d{6}\b/.test(part));
+    
+    let area = '';
+    
+    // First, try to find areas with directional indicators anywhere in the address
+    for (let i = 0; i < addressParts.length; i++) {
+      const part = addressParts[i];
+      
+      // Skip unwanted parts
+      if (part.toLowerCase().includes('centre') || 
+          part.toLowerCase().includes('complex') ||
+          part.toLowerCase() === city?.toLowerCase() ||
+          part.toLowerCase().includes('maharashtra') ||
+          part.toLowerCase().includes('india') ||
+          /\b\d{6}\b/.test(part)) {
+        continue;
+      }
+      
+      // Look for directional areas (most reliable)
+      if (part.includes('West') || part.includes('East') || part.includes('North') || part.includes('South')) {
+        area = part;
+        break;
+      }
+    }
+    
+    // If no directional area found, look near pincode
+    if (!area && pincodeIndex > 0) {
+      for (let i = Math.max(0, pincodeIndex - 5); i < pincodeIndex; i++) {
+        const part = addressParts[i];
+        
+        // Skip unwanted parts
+        if (part.toLowerCase().includes('centre') || 
+            part.toLowerCase().includes('complex') ||
+            part.toLowerCase() === city?.toLowerCase() ||
+            part.toLowerCase().includes('maharashtra') ||
+            part.toLowerCase().includes('india')) {
+          continue;
+        }
+        
+        // Take first reasonable area name
+        if (part.length > 3 && !area) {
+          area = part;
+        }
+      }
+    }
+    
+    return area ? `${area}, ${city}` : city || '';
+  };
+
+  // Helper function to find matching programs from Excel data based on program type
+  const findMatchingPrograms = (programKey) => {
+    // Mapping between UI program keys and actual Excel program type names
+    const typeMapping = {
+      'happiness': ['Happiness Program', 'Happiness Program (3 Days)'],
+      'youth': ['Happiness Program for Youth-3 Days'],
+      'ombw': ['OMBW', 'Online Meditation & Breath Workshop']
+    };
+    
+    const matchingTypes = typeMapping[programKey] || [];
+    
+    // Filter from upcoming programs (which already have formattedDate and are sorted by date)
+    const matchingPrograms = aolProgramsData.programs.upcoming.filter(program => 
+      matchingTypes.includes(program.programType)
+    );
+    
+    return matchingPrograms;
+  };
+
+  // Helper function to get next available program for a specific program type
+  const getNextProgram = (programKey) => {
+    const matchingPrograms = findMatchingPrograms(programKey);
+    // Return first program (earliest date) since upcoming array is already sorted
+    return matchingPrograms.length > 0 ? matchingPrograms[0] : null;
+  };
+
   const programs = [
     {
       title: "Happiness Program",
@@ -150,6 +237,7 @@ const ProgramsShowcase = () => {
       level: "Ages 18+",
       icon: Heart,
       color: "from-pink-500 to-rose-500",
+      programKey: "happiness",
       registrationLink: "https://aolt.in/894652"
     },
     {
@@ -160,6 +248,7 @@ const ProgramsShowcase = () => {
       level: "Ages 18+",
       icon: Brain,
       color: "from-blue-500 to-indigo-500",
+      programKey: "ombw",
       comingSoon: true
     },
     {
@@ -170,7 +259,8 @@ const ProgramsShowcase = () => {
       level: "Ages 18-35",
       icon: Users,
       color: "from-green-500 to-teal-500",
-      comingSoon: true
+      programKey: "youth",
+      comingSoon: false
     }
   ];
 
@@ -188,6 +278,10 @@ const ProgramsShowcase = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => {
             const IconComponent = program.icon;
+            const nextProgram = getNextProgram(program.programKey);
+            const hasAvailableProgram = nextProgram && !program.comingSoon;
+            const registrationUrl = hasAvailableProgram ? `https://${nextProgram.registrationUrl}` : program.registrationLink;
+            
             return (
               <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
                 <CardHeader className="text-center">
@@ -198,6 +292,16 @@ const ProgramsShowcase = () => {
                   <CardDescription className="text-sm font-medium text-blue-600">
                     {program.duration} • {program.level}
                   </CardDescription>
+                  
+                  {/* Show next available program info if exists */}
+                  {hasAvailableProgram && (
+                    <div className="mt-3 p-2 bg-green-50 rounded-lg">
+                      <div className="text-xs font-semibold text-green-800">Next Session Available</div>
+                      <div className="text-xs text-green-700">
+                        {nextProgram.formattedDate} • {getAreaCity(nextProgram.address, nextProgram.city)}
+                      </div>
+                    </div>
+                  )}
                 </CardHeader>
                 
                 <CardContent>
@@ -216,7 +320,7 @@ const ProgramsShowcase = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    {program.comingSoon ? (
+                    {program.comingSoon && !hasAvailableProgram ? (
                       <>
                         <Button 
                           className="w-full bg-gray-400 cursor-not-allowed"
@@ -238,10 +342,10 @@ const ProgramsShowcase = () => {
                       <>
                         <Button 
                           className="w-full bg-blue-600 hover:bg-blue-700"
-                          onClick={() => window.open(program.registrationLink, '_blank')}
+                          onClick={() => window.open(registrationUrl, '_blank')}
                         >
                           <ExternalLink className="w-4 h-4 mr-2" />
-                          Register Now
+                          {hasAvailableProgram && nextProgram?.formattedDate ? `Register: ${nextProgram.formattedDate}` : 'Register Now'}
                         </Button>
                         <Button 
                           variant="outline" 
@@ -378,22 +482,80 @@ const BenefitsSection = () => {
   );
 };
 
-// Upcoming Schedule Component
+// Upcoming Schedule Component - Displays dynamic programs from Excel data
 const UpcomingSchedule = () => {
-  const upcomingPrograms = [
-    {
-      title: "Happiness Program",
-      dates: "24th to 27th July, 2025",
-      time: "7:00 PM - 9:30 PM",
-      location: "Mulund, Mumbai",
-      type: "In-person",
-      spotsLeft: 18,
-      registrationLink: "https://aolt.in/894652"
+  // Helper function to extract area and city from address using pincode (same logic as ProgramsShowcase)
+  const getAreaCity = (address, city) => {
+    if (!address) return city || '';
+    
+    // Extract area from address using pincode as anchor
+    const addressParts = address.split(',').map(part => part.trim()).filter(part => part.length > 0);
+    
+    // Find pincode (6 digits)
+    const pincodeIndex = addressParts.findIndex(part => /\b\d{6}\b/.test(part));
+    
+    let area = '';
+    
+    // First, try to find areas with directional indicators anywhere in the address
+    for (let i = 0; i < addressParts.length; i++) {
+      const part = addressParts[i];
+      
+      // Skip unwanted parts
+      if (part.toLowerCase().includes('centre') || 
+          part.toLowerCase().includes('complex') ||
+          part.toLowerCase() === city?.toLowerCase() ||
+          part.toLowerCase().includes('maharashtra') ||
+          part.toLowerCase().includes('india') ||
+          /\b\d{6}\b/.test(part)) {
+        continue;
+      }
+      
+      // Look for directional areas (most reliable)
+      if (part.includes('West') || part.includes('East') || part.includes('North') || part.includes('South')) {
+        area = part;
+        break;
+      }
     }
-  ];
+    
+    // If no directional area found, look near pincode
+    if (!area && pincodeIndex > 0) {
+      for (let i = Math.max(0, pincodeIndex - 5); i < pincodeIndex; i++) {
+        const part = addressParts[i];
+        
+        // Skip unwanted parts
+        if (part.toLowerCase().includes('centre') || 
+            part.toLowerCase().includes('complex') ||
+            part.toLowerCase() === city?.toLowerCase() ||
+            part.toLowerCase().includes('maharashtra') ||
+            part.toLowerCase().includes('india')) {
+          continue;
+        }
+        
+        // Take first reasonable area name
+        if (part.length > 3 && !area) {
+          area = part;
+        }
+      }
+    }
+    
+    return area ? `${area}, ${city}` : city || '';
+  };
+
+  // Transform upcoming programs from parsed Excel data for display
+  const upcomingPrograms = aolProgramsData.programs.upcoming.map(program => ({
+    title: program.programType,
+    dates: program.formattedDate,
+    time: program.startTime,
+    location: getAreaCity(program.address, program.city), // Extract clean area name
+    address: program.address, // Keep full address for tooltip/details
+    type: "In-person",
+    registrationLink: `https://${program.registrationUrl}`, // Direct AOL portal link
+    teachers: program.teachers.slice(0, 3), // Show first 3 teachers for space
+    id: program.id
+  }));
 
   return (
-    <section className="py-16 bg-white">
+    <section id="upcoming-programs" className="py-16 bg-white">
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-gray-900">Upcoming Programs</h2>
@@ -417,7 +579,7 @@ const UpcomingSchedule = () => {
                       </span>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600 mb-3">
                       <div className="flex items-center">
                         <Calendar className="h-4 w-4 mr-2 text-blue-600" />
                         {program.dates}
@@ -431,13 +593,26 @@ const UpcomingSchedule = () => {
                         {program.location}
                       </div>
                     </div>
+                    
+                    {/* Show address if available */}
+                    {program.address && (
+                      <div className="text-xs text-gray-500 mb-2">
+                        <MapPin className="h-3 w-3 inline mr-1" />
+                        {program.address}
+                      </div>
+                    )}
+                    
+                    {/* Show teachers if available */}
+                    {program.teachers && program.teachers.length > 0 && (
+                      <div className="text-xs text-gray-600">
+                        <Users className="h-3 w-3 inline mr-1" />
+                        Teachers: {program.teachers.map(t => t.name).join(', ')}
+                        {program.teachers.length === 3 && ' and more...'}
+                      </div>
+                    )}
                   </div>
                   
-                  <div className="flex items-center gap-4">
-                    <div className="text-center">
-                      <div className="text-sm text-gray-500">Spots remaining</div>
-                      <div className="text-lg font-bold text-green-600">{program.spotsLeft}</div>
-                    </div>
+                  <div className="flex justify-end">
                     <Button 
                       className="bg-blue-600 hover:bg-blue-700"
                       onClick={() => window.open(program.registrationLink || 'https://aolt.in/894652', '_blank')}
@@ -455,10 +630,14 @@ const UpcomingSchedule = () => {
           <Button 
             variant="outline" 
             size="lg"
-            onClick={() => window.open('https://aolt.in/894652', '_blank')}
+            data-tally-open="w2oP4D"
+            data-tally-layout="modal"
+            data-tally-width="600"
+            data-tally-emoji-text="🌟"
+            data-tally-emoji-animation="wave"
           >
             <ExternalLink className="w-4 h-4 mr-2" />
-            View Registration Page
+            Program Inquiry
           </Button>
         </div>
       </Container>
@@ -586,26 +765,92 @@ const FAQSection = () => {
   );
 };
 
-// Call to Action Component
+// Call to Action Component - Dynamic button linking to closest upcoming program
 const CallToActionSection = () => {
+  // Helper function to extract area and city from address using pincode (same logic as other components)
+  const getAreaCity = (address, city) => {
+    if (!address) return city || '';
+    
+    const addressParts = address.split(',').map(part => part.trim());
+    const pincodeIndex = addressParts.findIndex(part => /\b\d{6}\b/.test(part));
+    
+    let area = '';
+    if (pincodeIndex > 0) {
+      for (let i = Math.max(0, pincodeIndex - 3); i < pincodeIndex; i++) {
+        const part = addressParts[i];
+        if (part.includes('West') || part.includes('East') || part.includes('North') || part.includes('South') || 
+            (part.length > 3 && !part.toLowerCase().includes('centre') && !part.toLowerCase().includes('complex'))) {
+          area = part;
+        }
+      }
+    }
+    
+    if (!area) {
+      for (let i = 0; i < addressParts.length; i++) {
+        const part = addressParts[i];
+        if (part.includes('West') || part.includes('East') || part.includes('North') || part.includes('South')) {
+          area = part;
+          break;
+        }
+        if (part.toLowerCase().includes(city?.toLowerCase() || '')) {
+          area = addressParts[i - 1] || '';
+          break;
+        }
+      }
+    }
+    
+    return area ? `${area}, ${city}` : city || '';
+  };
+
+  // Get the closest upcoming program (first in sorted array)
+  const nextProgram = aolProgramsData.programs.upcoming[0];
+  
+  // Fallback configuration if no programs are available
+  const fallbackLink = 'https://aolt.in/894652';
+  const registrationLink = nextProgram 
+    ? `https://${nextProgram.registrationUrl}` 
+    : fallbackLink;
+  
+  // Dynamic button text based on program availability
+  const buttonText = nextProgram 
+    ? `Register: ${nextProgram.programType}` 
+    : 'Register for Next Program';
+  
+  // Dynamic program information display
+  const programInfo = nextProgram 
+    ? `${nextProgram.formattedDate} • ${getAreaCity(nextProgram.address, nextProgram.city)}`
+    : 'Join our upcoming program';
+
   return (
     <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
       <Container>
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold mb-6">Ready to Begin Your Journey?</h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-6 text-blue-100">
             Join thousands who have discovered inner peace, better health, and lasting happiness. 
             Your transformation begins with a single breath.
           </p>
+          
+          {/* Show next program info if available */}
+          {nextProgram && (
+            <div className="mb-6 p-4 bg-blue-700/30 rounded-lg inline-block">
+              <div className="text-lg font-semibold text-yellow-300">
+                Next Program: {nextProgram.programType}
+              </div>
+              <div className="text-blue-200 text-sm">
+                {programInfo}
+              </div>
+            </div>
+          )}
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
               className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-semibold px-8 py-3"
-              onClick={() => window.open('https://aolt.in/894652', '_blank')}
+              onClick={() => window.open(registrationLink, '_blank')}
             >
               <ExternalLink className="w-5 h-5 mr-2" />
-              Register for Next Program
+              {buttonText}
             </Button>
             <Button 
               size="lg" 

@@ -8,7 +8,8 @@
     "build": "vite build && node generate-sitemap.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate-sitemap": "node generate-sitemap.js"
+    "generate-sitemap": "node generate-sitemap.js",
+    "update-aol-programs": "node parse-aol-programs.cjs"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.1",
