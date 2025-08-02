@@ -56,7 +56,7 @@ Program ID, Status, GK Code, Program Type, Sub Programs, Registered Pax Count, R
 
 ### Sample Data Row
 ```csv
-TM83318,Active,MH006,Happiness Program (3 Days),,0,aolt.in/900847,"Jyoti Vyas(MH0818), Mihir Chavan(MH5688)","D2, Parmeswari centre, Mulund West, Mumbai, Maharashtra 400080",Mumbai,15 Aug 2025,3:00 PM,0
+TM83318,Active,MH006,Happiness Program (3 Days),,0,aolt.in/900847,"Beena Mamania(MH1955), Mihir Chavan(MH5688)","D2, Parmeswari centre, Mulund West, Mumbai, Maharashtra 400080",Mumbai,15 Aug 2025,3:00 PM,0
 ```
 
 ---
@@ -347,7 +347,7 @@ Add to your `package.json`:
 ### Input CSV Format
 ```csv
 Program ID,Status,GK Code,Program Type,Sub Programs,Registered Pax Count,Registration Url,Teachers,Address,City,Start Date,Start Time,CRF Pax Count
-TM83318,Active,MH006,Happiness Program (3 Days),,0,aolt.in/900847,"Jyoti Vyas(MH0818), Mihir Chavan(MH5688)","D2, Parmeswari centre, Mulund West, Mumbai, Maharashtra 400080",Mumbai,15 Aug 2025,3:00 PM,0
+TM83318,Active,MH006,Happiness Program (3 Days),,0,aolt.in/900847,"Beena Mamania(MH1955), Mihir Chavan(MH5688)","D2, Parmeswari centre, Mulund West, Mumbai, Maharashtra 400080",Mumbai,15 Aug 2025,3:00 PM,0
 ```
 
 ### Output JSON Structure
@@ -367,7 +367,7 @@ TM83318,Active,MH006,Happiness Program (3 Days),,0,aolt.in/900847,"Jyoti Vyas(MH
         "registrationUrl": "aolt.in/900847",
         "teachers": [
           {
-            "name": "Jyoti Vyas",
+            "name": "Beena Mamania",
             "code": "MH0818"
           }
         ],
@@ -882,7 +882,7 @@ jobs:
 ```
 ❌ Problem: Teacher names/codes not extracting correctly
 ✅ Solution: Verify teacher format
-   - Expected: "Jyoti Vyas(MH0818), Mihir Chavan(MH5688)"
+   - Expected: "Beena Mamania(MH1955), Mihir Chavan(MH5688)"
    - Each teacher: "Name(Code)"
    - Multiple teachers separated by commas
 ```
