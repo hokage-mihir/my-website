@@ -3,8 +3,34 @@ User-agent: *
 Allow: /
 Disallow: /private/
 
+# AI and ML crawlers
+User-agent: CCBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OpenAI
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
 # Sitemap
 Sitemap: https://mihirchavan.in/sitemap.xml
 
-# Crawl delay
-Crawl-delay: 10
+# Crawl delay for general bots
+Crawl-delay: 5
+
+# No crawl delay for AI crawlers to improve accessibility
+User-agent: CCBot
+Crawl-delay: 1
+
+User-agent: ChatGPT-User  
+Crawl-delay: 1
+
+User-agent: OpenAI
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Crawl-delay: 1

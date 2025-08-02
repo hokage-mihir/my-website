@@ -24,7 +24,7 @@ const Layout = () => {
       {!isPortalPage && <Header />}
       
       {!isPortalPage && (
-        <nav className="bg-white shadow-sm border-b">
+        <nav className="bg-white shadow-sm border-b" role="navigation" aria-label="Main navigation">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               {/* Mobile menu button */}
@@ -214,7 +214,7 @@ const Layout = () => {
         </nav>
       )}
       
-      <main className="flex-grow">
+      <main className="flex-grow" role="main" aria-label="Main content">
         <Outlet />
       </main>
       

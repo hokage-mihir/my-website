@@ -300,7 +300,20 @@ const ServicesShowcase = () => {
                         ? 'bg-yellow-600 hover:bg-yellow-700' 
                         : 'bg-purple-600 hover:bg-purple-700'
                     }`}
-                    data-cal-link="hokagemihir/jyotish"
+                    // Cal.com booking configuration - each service has dedicated namespace and link
+                    data-cal-namespace={
+                      service.title === "Complete Birth Chart Analysis" ? "complete-birth-chart-analysis" :
+                      service.title === "60 min Consultation for 2 People" ? "2people" :
+                      service.title === "30 min Consultation" ? "30min" :
+                      undefined
+                    }
+                    data-cal-link={
+                      service.title === "Complete Birth Chart Analysis" ? "hokagemihir/complete-birth-chart-analysis" :
+                      service.title === "60 min Consultation for 2 People" ? "hokagemihir/2people" :
+                      service.title === "30 min Consultation" ? "hokagemihir/30min" :
+                      "hokagemihir/jyotish" // Fallback for any other services
+                    }
+                    data-cal-config='{"layout":"month_view"}'
                   >
                     Book This Reading
                   </Button>

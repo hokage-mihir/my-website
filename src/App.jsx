@@ -13,9 +13,10 @@ import JyotishPortal from './pages/JyotishPortal';
 import ArtOfLivingPortal from './pages/ArtOfLivingPortal';
 
 function App() {
-  // Initialize Cal.com
+  // Initialize Cal.com booking widgets
   useEffect(() => {
     (async function () {
+      // Default Cal.com instance for general bookings
       const cal = await getCalApi();
       cal("ui", {
         styles: { 
@@ -24,6 +25,18 @@ function App() {
         hideEventTypeDetails: false,
         layout: "month_view"
       });
+
+      // Dedicated namespace for Complete Birth Chart Analysis (60 min comprehensive reading)
+      const calComplete = await getCalApi({"namespace":"complete-birth-chart-analysis"});
+      calComplete("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
+      // Dedicated namespace for Couples/2 People Consultation (60 min joint session)
+      const cal2People = await getCalApi({"namespace":"2people"});
+      cal2People("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
+      // Dedicated namespace for 30 Minute Consultation (focused guidance)
+      const cal30Min = await getCalApi({"namespace":"30min"});
+      cal30Min("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
     })();
   }, []);
 

@@ -1,0 +1,56 @@
+{
+  "website_purpose": "Personal portfolio and professional services website for Mihir Chavan",
+  "primary_services": [
+    {
+      "name": "Microsoft Excel Consultations",
+      "description": "Advanced Excel training, automation, and business analytics consulting",
+      "target_audience": "Business professionals, analysts, students",
+      "expertise_level": "Expert level with specialized skills in automation and data analysis"
+    },
+    {
+      "name": "Jyotish (Vedic Astrology) Consultations", 
+      "description": "Traditional Vedic astrology readings for life guidance and clarity",
+      "credentials": "Astromani graduate and practicing astrologer",
+      "approach": "Empowering through knowledge rather than fear, practical insights for decision-making"
+    },
+    {
+      "name": "Marma Healing (Marma Chikitsa)",
+      "description": "Traditional healing practice focusing on vital body points for pain relief and regulation",
+      "service_type": "Therapeutic healing sessions"
+    },
+    {
+      "name": "Art of Living Programs",
+      "description": "Stress elimination, meditation, and personal development programs",
+      "current_program": "Happiness Program - July 24-27, featuring breathing techniques and meditation"
+    }
+  ],
+  "professional_background": {
+    "current_role": "Program Manager Cloud Business at Redington Ltd",
+    "industry": "Finance and Technology",
+    "location": "Mumbai, India",
+    "specializations": ["Microsoft Excel", "Business Analytics", "Cloud Business Management"]
+  },
+  "contact_methods": {
+    "booking_system": "Cal.com integration for consultations",
+    "whatsapp": "+918369790166",
+    "phone": "+918369790166",
+    "website": "https://mihirchavan.in"
+  },
+  "content_structure": {
+    "main_sections": ["Home", "About", "Jyotish", "Art of Living", "Projects", "Contact"],
+    "key_pages": {
+      "home": "Overview of services and current programs",
+      "about": "Professional background and expertise",
+      "jyotish": "Detailed astrology services and booking",
+      "aol": "Art of Living programs and registration",
+      "projects": "Passion projects and portfolio",
+      "contact": "Direct contact and consultation booking"
+    }
+  },
+  "seo_optimizations": {
+    "structured_data": "Comprehensive JSON-LD with Person, WebSite, Service, and FAQ schemas",
+    "meta_tags": "Enhanced title, description, keywords, and social media tags",
+    "sitemap": "Automated generation via build process",
+    "canonical_urls": "Proper canonical URL structure"
+  }
+}
