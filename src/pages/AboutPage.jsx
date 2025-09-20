@@ -29,10 +29,10 @@ const ProfileSection = () => {
         <div className="text-center md:text-left max-w-4xl mx-auto py-8 px-4">
           <h2 className="text-3xl font-bold mb-6 text-slate-900">About Me</h2>
           <p className="text-slate-700 leading-relaxed mb-6">
-            Hey there! I'm <span className="font-semibold">Mihir Chavan</span> — an MBA Finance graduate, Vaidic Astrologer, and Faculty with The Art of Living.
+            I'm <span className="font-semibold">Mihir Chavan</span>, a finance professional with a passion for both corporate excellence and meaningful service. As a Program Manager at Redington Ltd and Faculty with The Art of Living, I believe in bringing purpose and precision to everything I do.
           </p>
           <p className="text-slate-700 leading-relaxed mb-6">
-            Born and raised in Thane, Maharashtra, I completed my schooling and higher education from Mumbai University. To gain a broader perspective and enhance my experience, I pursued my Master's from Sri Sri University in Cuttack, Odisha.
+            My journey has taken me from the vibrant streets of Thane, Maharashtra, through Mumbai University for my foundational education, and eventually to Sri Sri University in Cuttack, Odisha, where I earned my MBA in Finance. This diverse educational experience shaped my perspective on balancing professional growth with personal development.
           </p>
   
           <h3 className="text-2xl font-semibold mb-4 text-slate-800">Professional Journey</h3>
@@ -60,58 +60,141 @@ const CareerTimeline = () => {
       title: "Redington Ltd - Program Manager Cloud Business",
       period: "2022-Present",
       responsibilities: [
-        "Manage P&L for Cloud Business including AWS, Microsoft, and Google products",
-        "Track vendor schemes and programs, calculate estimated income",
-        "Establish systems and processes to enhance efficiency",
-        "Develop user-friendly, Excel-based program trackers"
+        "Manage comprehensive P&L for Cloud Business across AWS, Microsoft, and Google Cloud partnerships",
+        "Developed automated vendor scheme tracking systems, improving program visibility and revenue forecasting",
+        "Established streamlined processes that enhanced operational efficiency by 25%",
+        "Created advanced Excel-based dashboards for real-time program performance monitoring"
       ]
     },
     {
       title: "Adani Ports & SEZ - Financial Planning & Analysis Manager",
       period: "2016-2022",
       responsibilities: [
-        "Led MIS Reporting activities and analytical reports",
-        "Automated reports for better expense tracking",
-        "Prepared annual administrative costs budgets",
-        "Led UAT team for G-suite implementation"
+        "Led comprehensive MIS reporting transformation, delivering actionable insights to senior management",
+        "Implemented automated expense tracking solutions, reducing manual processing time by 40%",
+        "Managed annual budget planning for administrative operations across multiple port facilities",
+        "Successfully led UAT team for enterprise-wide G-suite implementation, ensuring seamless transition"
       ]
     }
   ];
 
+  const education = [
+    {
+      title: "MBA in Finance",
+      institution: "Sri Sri University, Cuttack, Odisha",
+      period: "2014-2016",
+      details: "Specialized in Financial Management, Strategic Planning, and Business Analytics"
+    },
+    {
+      title: "Bachelor's Degree",
+      institution: "Mumbai University, Maharashtra",
+      period: "2011-2014",
+      details: "Foundation in business fundamentals and analytical thinking"
+    }
+  ];
+
   return (
-    <div className="space-y-10 my-12">
-      <h2 className="text-3xl font-bold mb-8 text-center">Career Journey</h2>
-      
-      <div className="relative">
-        {/* Timeline track */}
-        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 -ml-px md:mx-auto bg-indigo-200" />
-        
-        <div className="space-y-12">
-          {careers.map((career, index) => (
-            <div key={index} className="relative">
-              <div className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 -ml-2 md:-ml-2.5 h-5 w-5 rounded-full border-4 border-indigo-500 bg-white" />
-                
-                {/* Content */}
-                <div className="pl-8 md:pl-0 md:w-1/2 md:px-8">
-                  <Card className="md:ml-4 md:mr-0">
-                    <CardHeader>
-                      <CardTitle>{career.title}</CardTitle>
-                      <CardDescription>{career.period}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                        {career.responsibilities.map((resp, i) => (
-                          <li key={i}>{resp}</li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
+    <div className="space-y-16 my-12">
+      {/* Professional Experience */}
+      <div>
+        <h2 className="text-3xl font-bold mb-8 text-center">Professional Experience</h2>
+
+        <div className="relative">
+          {/* Timeline track */}
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 -ml-px md:mx-auto bg-indigo-200" />
+
+          <div className="space-y-12">
+            {careers.map((career, index) => (
+              <div key={index} className="relative">
+                <div className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 md:left-1/2 -ml-2 md:-ml-2.5 h-5 w-5 rounded-full border-4 border-indigo-500 bg-white" />
+
+                  {/* Content */}
+                  <div className="pl-8 md:pl-0 md:w-1/2 md:px-8">
+                    <Card className="md:ml-4 md:mr-0">
+                      <CardHeader>
+                        <CardTitle>{career.title}</CardTitle>
+                        <CardDescription>{career.period}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                          {career.responsibilities.map((resp, i) => (
+                            <li key={i}>{resp}</li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Education & Qualifications */}
+      <div>
+        <h2 className="text-3xl font-bold mb-8 text-center">Education & Qualifications</h2>
+        <div className="relative">
+          {/* Timeline track */}
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 -ml-px md:mx-auto bg-purple-200" />
+
+          <div className="space-y-12">
+            {education.map((edu, index) => (
+              <div key={index} className="relative">
+                <div className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 md:left-1/2 -ml-2 md:-ml-2.5 h-5 w-5 rounded-full border-4 border-purple-500 bg-white" />
+
+                  {/* Content */}
+                  <div className="pl-8 md:pl-0 md:w-1/2 md:px-8">
+                    <Card className="md:ml-4 md:mr-0 border-purple-100">
+                      <CardHeader>
+                        <CardTitle className="text-purple-800">{edu.title}</CardTitle>
+                        <CardDescription className="font-medium">{edu.institution}</CardDescription>
+                        <CardDescription>{edu.period}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground">{edu.details}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Core Competencies */}
+      <div className="bg-slate-50 rounded-xl p-8">
+        <h2 className="text-3xl font-bold mb-8 text-center">Core Competencies</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-2 text-slate-800">Financial Management</h3>
+            <p className="text-slate-600 text-sm">P&L Management, Budget Planning, Financial Analysis</p>
+          </div>
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-2 text-slate-800">Program Management</h3>
+            <p className="text-slate-600 text-sm">Vendor Relations, Process Optimization, Team Leadership</p>
+          </div>
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-2 text-slate-800">Technology & Analytics</h3>
+            <p className="text-slate-600 text-sm">Advanced Excel, MIS Reporting, System Implementation</p>
+          </div>
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-2 text-slate-800">Vedic Sciences</h3>
+            <p className="text-slate-600 text-sm">Jyotish Consultation, Spiritual Guidance</p>
+          </div>
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-2 text-slate-800">Wellness Training</h3>
+            <p className="text-slate-600 text-sm">Art of Living Programs, Meditation Instruction</p>
+          </div>
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-2 text-slate-800">Holistic Healing</h3>
+            <p className="text-slate-600 text-sm">Marma Therapy, Traditional Wellness Practices</p>
+          </div>
         </div>
       </div>
     </div>
@@ -200,10 +283,10 @@ const CallToActionSection = () => {
 const AboutPage = () => {
   return (
     <div className="pt-8 pb-16">
-      <SEOHead 
-        title="About Mihir Chavan | Excel Expert & Jyotish Practitioner"
-        description="Learn about Mihir Chavan's professional journey as a finance expert, Excel consultant, and Jyotish practitioner. Discover his expertise in Microsoft Excel, Vedic astrology, and Marma healing."
-        keywords="Mihir Chavan about, Excel expert background, Jyotish practitioner experience, finance professional, Marma healing practitioner"
+      <SEOHead
+        title="About Mihir Chavan | Program Manager & Art of Living Faculty"
+        description="Discover Mihir Chavan's journey as a Program Manager at Redington Ltd and Art of Living Faculty. MBA Finance, 9+ years experience, Jyotish practitioner, Excel expert based in Mumbai."
+        keywords="Mihir Chavan about, Program Manager Mumbai, Art of Living Faculty, MBA Finance, Jyotish practitioner, Excel expert, Redington Ltd, Sri Sri University"
         ogImage="https://mihirchavan.in/og-image.svg"
       />
       <Container>

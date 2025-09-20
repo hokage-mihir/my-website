@@ -11,6 +11,8 @@ import ContactPage from './pages/ContactPage';
 import TermsConditionsPage from './pages/TermsConditionsPage';
 import JyotishPortal from './pages/JyotishPortal';
 import ArtOfLivingPortal from './pages/ArtOfLivingPortal';
+import NotFoundPage from './pages/NotFoundPage';
+import PerformanceMonitor from './components/PerformanceMonitor';
 
 function App() {
   // Initialize Cal.com booking widgets
@@ -42,6 +44,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <PerformanceMonitor />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -51,6 +54,7 @@ function App() {
           <Route path="terms" element={<TermsConditionsPage />} />
           <Route path="jyotish" element={<JyotishPortal />} />
           <Route path="aol" element={<ArtOfLivingPortal />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

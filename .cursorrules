@@ -1,0 +1,401 @@
+# Mihir Chavan Website Development Rules
+
+## 🔧 PROJECT CONFIGURATION
+<!-- ================================================================ -->
+<!-- CUSTOMIZED FOR MIHIR CHAVAN'S PERSONAL WEBSITE -->
+<!-- ================================================================ -->
+
+### Project Details
+- **Project Name**: Mihir Chavan Personal Website
+- **Website Type**: Personal Portfolio & Professional Services
+- **Domain**: mihirchavan.in
+- **Primary Goal**: Showcase professional services (Excel consulting, Jyotish, Marma healing) and personal brand
+
+### Technology Stack
+- **Frontend Framework**: React with Vite
+- **CSS Framework**: Tailwind CSS
+- **Backend**: None (Static site)
+- **CMS**: None
+- **Build Tools**: Vite
+- **Routing**: React Router
+- **Booking System**: Cal.com integration
+- **Forms**: Tally.so integration
+
+### Industry/Niche Specifics
+- **Industry**: Professional Services (Finance, Technology, Wellness, Spirituality)
+- **Target Audience**: Business professionals, Excel users, astrology seekers, wellness enthusiasts
+- **Primary Keywords**: Excel consultant, Jyotish, Vedic astrology, Marma healing, Excel training, business analytics
+- **Competitor Analysis**: Other Excel consultants, astrology practitioners, wellness professionals
+
+### SEO Configuration
+- **Google Analytics ID**: [To be configured]
+- **Google Search Console**: [To be verified]
+- **Sitemap URL**: https://mihirchavan.in/sitemap.xml
+- **Robots.txt URL**: https://mihirchavan.in/robots.txt
+
+### Content Strategy
+- **Content Length Targets**:
+  - Homepage: 800-1200 words
+  - Service Pages: 1000-1500 words each
+  - About Page: 600-800 words
+  - Blog Posts: 1500-2500 words
+- **Update Frequency**: Monthly (program updates, new services)
+
+### Performance Targets
+- **Core Web Vitals Goals**:
+  - LCP: < 2.5s
+  - FID: < 100ms
+  - CLS: < 0.1
+  - TTFB: < 600ms
+
+<!-- ================================================================ -->
+<!-- END OF PROJECT CONFIGURATION -->
+<!-- ================================================================ -->
+
+## Core Development Principles
+
+### 1. Code Quality & Architecture
+- Write clean, semantic HTML with proper accessibility attributes
+- Use meaningful class names and component structure
+- Implement mobile-first responsive design
+- Ensure cross-browser compatibility
+- Follow modern web standards and best practices
+- Maintain consistent component architecture across all pages
+
+### 2. CSS & Styling Guidelines (Tailwind CSS Expert Integration)
+
+#### CSS Conflict Resolution & Architecture
+- **Specificity Management**: Always analyze existing CSS for potential conflicts before adding new styles
+- **Cascade Analysis**: Understand inheritance patterns and prevent unintended style overwrites
+- **Scoping Strategy**: Implement proper component isolation using CSS modules or Tailwind's layer system
+- **Legacy CSS Integration**: Safely integrate Tailwind with existing Bootstrap and custom CSS
+
+#### Before Writing Any CSS
+1. **Audit Existing Styles**: Scan project for existing CSS files, frameworks, and potential conflicts
+2. **Analyze Component Tree**: Understand parent-child relationships and inheritance patterns
+3. **Check Configuration**: Review current styling approach and suggest optimizations
+4. **Identify Patterns**: Look for repeated styling patterns that should be abstracted
+
+#### Code Quality Standards
+- **Semantic Naming**: Use meaningful class combinations and component names
+- **Responsive Design**: Mobile-first approach with proper breakpoint usage
+- **Accessibility**: Ensure WCAG compliance with proper contrast, focus states, screen reader support
+- **Performance**: Minimize bundle size, avoid unnecessary utilities, optimize for Core Web Vitals
+
+#### Component Architecture Patterns
+- **Variant Systems**: Use conditional styling for different states
+- **Compound Components**: Build complex UI patterns with proper style isolation
+- **Design Tokens**: Abstract colors, spacing, typography into reusable tokens
+- **Layer Management**: Proper use of CSS layers for organization
+
+### 3. SEO Optimization Guidelines (SEO Expert Integration)
+
+#### Initial Project Analysis Protocol
+Upon working on any file, immediately check for:
+- Meta tags implementation and quality
+- Google Analytics presence (GA4 or Universal Analytics)
+- Structured data (JSON-LD)
+- Open Graph tags
+- Canonical URLs
+- Image optimization status
+- Loading performance indicators
+- Mobile responsiveness
+
+#### Universal On-Page SEO Requirements
+
+**Meta Tags Template:**
+```html
+<!-- Primary Meta Tags -->
+<title>[Primary Keyword] - [Secondary Keyword] | Mihir Chavan (50-60 chars)</title>
+<meta name="description" content="[Action verb] [benefit]. [Feature/Service]. [Call-to-action]. (150-160 chars)">
+<meta name="keywords" content="Excel consultant, Jyotish, Vedic astrology, Marma healing, business analytics">
+
+<!-- Viewport and Technical -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<link rel="canonical" href="https://mihirchavan.in/[page]">
+
+<!-- Indexing Control -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+```
+
+**Open Graph & Twitter Cards:**
+```html
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mihirchavan.in/[page]">
+<meta property="og:title" content="[Title from Meta Tags]">
+<meta property="og:description" content="[Description from Meta Tags]">
+<meta property="og:image" content="https://mihirchavan.in/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://mihirchavan.in/[page]">
+<meta name="twitter:title" content="[Title from Meta Tags]">
+<meta name="twitter:description" content="[Description from Meta Tags]">
+<meta name="twitter:image" content="https://mihirchavan.in/og-image.svg">
+```
+
+#### Service-Specific SEO Optimization
+
+**Excel Consulting Services:**
+- Service schema markup for consulting services
+- Professional credentials and certifications markup
+- Case study structure with detailed descriptions
+- Business analytics and automation content optimization
+- Client testimonial schemas
+
+**Jyotish/Astrology Services:**
+- Service schema for spiritual/wellness services
+- Practitioner credentials (Astromani graduate) markup
+- Consultation booking optimization
+- Educational content about Vedic astrology
+- Client guidance and empowerment focus
+
+**Marma Healing Services:**
+- Medical/wellness service schema
+- Traditional healing practice documentation
+- Therapeutic session optimization
+- Pain relief and regulation content
+- Holistic wellness approach
+
+#### Performance Optimization
+**Core Web Vitals Targets:**
+- **LCP**: < 2.5s
+- **FID**: < 100ms
+- **CLS**: < 0.1
+- **TTFB**: < 600ms
+
+**Image Optimization Protocol:**
+- Use WebP format with JPEG fallback (already implemented)
+- Implement responsive images with srcset
+- Lazy loading for below-fold images
+- Quality 80-85 for photos, 90-95 for graphics
+- Descriptive, keyword-relevant alt text
+- Descriptive file naming conventions
+
+### 4. Content Optimization Guidelines
+
+#### Universal Content SEO Rules
+1. **Title Structure**: Primary Keyword - Secondary | Mihir Chavan
+2. **URL Structure**: /service/descriptive-keyword-slug
+3. **Heading Hierarchy**: 
+   - One H1 per page (matches search intent)
+   - H2s for main sections
+   - H3s for subsections
+4. **Content Length**: Use targets from Project Configuration
+5. **Internal Linking**: 3-5 contextual links per 1000 words
+
+### 5. Google Analytics Integration
+
+#### Quick GA4 Setup Guide
+```html
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=[Google Analytics ID]"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '[Google Analytics ID]');
+</script>
+```
+
+#### Analytics Setup Checklist
+1. Verify GA4 property creation
+2. Implement basic tracking code
+3. Set up conversion events (consultation bookings, form submissions)
+4. Enable enhanced measurement (scroll, outbound clicks, site search)
+5. Link to Google Search Console
+6. Set up custom events for service page interactions
+
+### 6. Technical SEO Foundations
+
+#### Robots.txt Configuration (Current Implementation)
+```
+User-agent: *
+Allow: /
+Disallow: /private/
+
+# AI and ML crawlers
+User-agent: CCBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OpenAI
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Sitemap
+Sitemap: https://mihirchavan.in/sitemap.xml
+
+# Crawl delay for general bots
+Crawl-delay: 5
+
+# No crawl delay for AI crawlers to improve accessibility
+User-agent: CCBot
+Crawl-delay: 1
+
+User-agent: ChatGPT-User  
+Crawl-delay: 1
+
+User-agent: OpenAI
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Crawl-delay: 1
+```
+
+#### Enhanced Structured Data Base
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://mihirchavan.in/#person",
+      "name": "Mihir Chavan",
+      "url": "https://mihirchavan.in",
+      "sameAs": [
+        "https://www.linkedin.com/in/hokage-mihir/",
+        "https://www.instagram.com/hokagemihir/"
+      ],
+      "jobTitle": "Program Manager Cloud Business",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Redington Ltd"
+      },
+      "knowsAbout": ["Microsoft Excel", "Finance", "Jyotish", "Marma Chikitsa"],
+      "description": "Finance professional with expertise in Microsoft Excel, Jyotish (Vedic astrology), and Marma healing.",
+      "image": "https://mihirchavan.in/profile.webp"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mihirchavan.in/#website",
+      "url": "https://mihirchavan.in/",
+      "name": "Mihir Chavan | Excel Expert, Jyotish Practitioner & Finance Professional",
+      "description": "Personal website of Mihir Chavan offering Excel consultations, Jyotish readings, and Marma healing services",
+      "publisher": {
+        "@id": "https://mihirchavan.in/#person"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://mihirchavan.in/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+```
+
+### 7. Service-Specific Optimization Rules
+
+#### Excel Consulting Pages
+- Include specific Excel functions and techniques in content
+- Add case studies with measurable business impact
+- Optimize for "Excel consultant Mumbai" and related local terms
+- Include client testimonials with specific results
+- Add downloadable Excel templates or resources
+
+#### Jyotish Portal
+- Include educational content about Vedic astrology
+- Add birth chart analysis examples (with permission)
+- Optimize for "Jyotish consultant" and "Vedic astrology Mumbai"
+- Include information about Astromani certification
+- Add FAQ section about common astrology questions
+
+#### Marma Healing Services
+- Include information about traditional healing practices
+- Add educational content about Marma points
+- Optimize for "Marma healing Mumbai" and "traditional healing"
+- Include information about pain relief and regulation
+- Add client success stories (with permission)
+
+### 8. Problem-Solving Methodology
+
+#### When Styling Components:
+1. **Analyze Context**: Understand the component's purpose, parent containers, and usage patterns
+2. **Check Inheritance**: Identify inherited styles that might affect the component
+3. **Plan Responsive Strategy**: Design mobile-first with logical breakpoint progression
+4. **Implement Accessibility**: Include focus states, color contrast, and semantic markup
+5. **Test Across Browsers**: Consider browser-specific quirks and fallbacks
+6. **Optimize Performance**: Remove unused utilities, combine similar classes
+
+#### When Debugging CSS Issues:
+1. **Inspect Specificity**: Use browser dev tools to identify override sources
+2. **Check Cascade Order**: Verify CSS import order and layer priorities
+3. **Validate Syntax**: Ensure proper class names and combinations
+4. **Test Responsive**: Verify behavior across all breakpoints
+5. **Cross-browser Validation**: Test in multiple browsers and devices
+
+### 9. Quality Assurance Checklist
+
+Before delivering any solution:
+- [ ] No conflicts with existing CSS detected
+- [ ] Responsive design tested across all major breakpoints
+- [ ] Accessibility compliance verified (contrast, focus states, semantic markup)
+- [ ] Performance impact assessed (bundle size, render speed)
+- [ ] Cross-browser compatibility confirmed
+- [ ] Component reusability considered
+- [ ] Code maintainability optimized
+- [ ] Design system consistency maintained
+- [ ] Mobile-friendly test passes
+- [ ] All pages have unique titles and descriptions
+- [ ] Images are optimized and have alt text
+- [ ] HTTPS is properly implemented
+- [ ] Canonical URLs are set correctly
+- [ ] Service-specific schema markup is implemented
+- [ ] Cal.com booking integration is working
+- [ ] Contact forms are functional
+
+### 10. Communication Style
+
+- **Explain Reasoning**: Always explain why specific approaches were chosen
+- **Highlight Conflicts**: Proactively identify and resolve potential issues
+- **Suggest Improvements**: Recommend optimizations for existing code
+- **Provide Alternatives**: Offer multiple solutions with trade-off explanations
+- **Performance Insights**: Include performance implications of choices
+- **Best Practices**: Share modern web development and SEO best practices contextually
+- **Service Focus**: Always consider the three main services (Excel, Jyotish, Marma healing)
+
+### 11. Implementation Priority Matrix
+
+#### Phase 1: Critical (Week 1)
+1. Fix robots.txt and sitemap
+2. Implement Google Analytics
+3. Add basic meta tags (title, description) for all pages
+4. Ensure mobile responsiveness
+5. Fix any crawl errors
+6. Optimize existing images
+
+#### Phase 2: Important (Week 2-3)
+1. Implement comprehensive structured data
+2. Optimize Core Web Vitals
+3. Add Open Graph/Twitter Cards to all pages
+4. Complete image optimization
+5. Internal linking structure between services
+6. Add service-specific schema markup
+
+#### Phase 3: Enhancement (Week 4+)
+1. Content optimization for each service
+2. Schema markup expansion
+3. Advanced performance tuning
+4. A/B testing meta descriptions
+5. Featured snippet optimization
+6. Local SEO optimization for Mumbai
+
+## Remember
+
+- **Every service deserves good SEO** - Excel, Jyotish, and Marma healing each need specific optimization
+- **Adapt but don't overwhelm** - provide actionable steps suitable for the user's technical level
+- **Performance is SEO** - fast sites rank better
+- **User experience is the ultimate goal** - improvements should always enhance UX
+- **Service focus** - optimize based on the three main professional services
+- **Local optimization** - consider Mumbai-based searches for all services
+
+When in doubt, provide options and let the user choose based on their specific needs and resources.

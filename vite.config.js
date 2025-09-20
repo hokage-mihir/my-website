@@ -10,4 +10,27 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    // Optimize bundle splitting for better caching
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['lucide-react', '@radix-ui/react-separator', '@radix-ui/react-slot', '@radix-ui/react-toggle'],
+          cal: ['@calcom/embed-react']
+        }
+      }
+    },
+    // Enable source maps for production debugging
+    sourcemap: false,
+    // Optimize asset compression
+    minify: 'esbuild',
+    target: 'es2015'
+  },
+  // Optimize dev server performance
+  server: {
+    hmr: {
+      overlay: false
+    }
+  }
 })

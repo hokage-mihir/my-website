@@ -11,6 +11,7 @@ const OptimizedImage = ({
   className,
   priority = false,
   webpSrc = null,
+  sizes = null,
   ...props
 }) => {
   const [imageError, setImageError] = useState(false);
@@ -48,9 +49,10 @@ const OptimizedImage = ({
   if (autoWebpSrc && !webpError) {
     return (
       <picture>
-        <source 
-          srcSet={autoWebpSrc} 
-          type="image/webp" 
+        <source
+          srcSet={autoWebpSrc}
+          type="image/webp"
+          sizes={sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
           onError={handleWebpError}
         />
         <img
